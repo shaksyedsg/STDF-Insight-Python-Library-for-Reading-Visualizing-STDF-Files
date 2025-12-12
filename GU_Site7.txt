@@ -1,0 +1,915 @@
+Datalog report
+09/05/2025 12:41:57
+      Prog Name:    KARMA_PMD9655-PMX20_WS_VA_REV023.xlsm
+       Job Name:    VAAF-NV917-12B-023
+            Lot:     
+       Operator:    shaksyed
+      Test Mode:    Engineering
+      Node Name:    IFLEX8-SIN
+      Part Type:    NV917-12B
+    Channel map:    ChannelMap_12x
+    Environment:    
+     FacilityID:    QCOM-SD
+         JobRev:    VAAF-NV917-12B-023
+          RomID:    0
+       TestCode:    PRN
+        TstTemp:    25C
+
+    Site Number:    
+         0,  1,  2,  3,  4,  5,  6,  7,  8,  9,
+        10, 11
+
+    Device#: 1
+
+{-1} : error EEP:0014 : Failed read from DIB EEPROM located at bus address 0.
+{-1} : error EEP:0019 : CRC mismatch in Owner Block. Either the host computer or EEPROM memory is corrupt.
+ // ************************************************************************************************
+ // *****                    Qualcomm Confidential and Proprietary material                   *****
+ // *****  The test program is subject to US export controls and should not be shared to SMIC  *****
+ // ************************************************************************************************
+
+ Number   Site  Test Name                                Pin                Channel  Low            Measured           High           Force          Loc     
+<PrintPgmInfo>
+ 11       7     PrintPgmInfo                                                -1       1.0000         1.0000             10.0000        -1.0000        0       
+ 12       7     VDD                                                         -1       2.9000 V       0.0000 V           5.7000 V       -1.0000        0       
+ 13       7     PIB_Ser#                                                    -1       0.0000         1.0000             99.0000        -1.0000        0       
+ 14       7     PIB_Rev#                                                    -1       0.0000         1.0000             99.0000        -1.0000        0       
+ 15       7     PC_Ser#                                                     -1       0.0000         0.0000             99.0000        -1.0000        0       
+ 16       7     PC_Rev#                                                     -1       0.0000         0.0000             99.0000        -1.0000        0       
+ 17       7     TEMP                                                        -1       -30.0000       25.0000            85.0000        -1.0000        0       
+ 18       7     PROG_REV                                                    -1       1.0            23.0               31.0           -1.0           0       
+ 19       7     X                                                           -1       -9.9990 K      -32.7680 K         9.9990 K       -1.0000        0       
+ 20       7     Y                                                           -1       -9.9990 K      -32.7680 K         9.9990 K       -1.0000        0       
+ 21       7     Burn_OTP                                                    -1       N/A            -1.0000            N/A            -1.0000        0       
+<TempSensor>
+ 1050     7     BD_Temp                                  temp_sensor        2.a16    0.0 DegC       22.2 DegC          50.0 DegC      0.0 A          0       
+<CONTINUITY>
+ 1200     7     CT_PA_THERM1                             pa_therm1          32.b32   -1.0000 V      -426.0889 mV       -100.0000 mV   0.0000 A       0       
+ 1250     7     CT_PA_THERM2                             pa_therm2          32.d32   -1.0000 V      -424.1596 mV       -100.0000 mV   0.0000 A       0       
+ 1300     7     CT_PA_THERM3                             pa_therm3          32.c31   -1.0000 V      -424.7653 mV       -100.0000 mV   0.0000 A       0       
+ 1350     7     CT_GPIO01                                gpio01             32.c33   -1.0000 V      -610.9264 mV       -100.0000 mV   0.0000 A       0       
+ 1400     7     CT_GPIO02                                gpio02             32.a29   -1.0000 V      -401.9164 mV       -100.0000 mV   0.0000 A       0       
+ 1450     7     CT_GPIO03                                gpio03             32.c29   -1.0000 V      -505.7640 mV       -100.0000 mV   0.0000 A       0       
+ 1500     7     CT_GPIO04                                gpio04             32.b28   -1.0000 V      -419.2872 mV       -100.0000 mV   0.0000 A       0       
+ 1550     7     CT_GPIO05                                gpio05             32.d28   -1.0000 V      -610.7577 mV       -100.0000 mV   0.0000 A       0       
+ 1600     7     CT_GPIO06                                gpio06             32.a31   -1.0000 V      -405.6724 mV       -100.0000 mV   0.0000 A       0       
+ 1650     7     CT_GPIO07                                gpio07             36.b32   -1.0000 V      -611.4962 mV       -100.0000 mV   0.0000 A       0       
+ 1700     7     CT_GPIO08                                gpio08             36.d32   -1.0000 V      -605.6617 mV       -100.0000 mV   0.0000 A       0       
+ 1750     7     CT_GPIO09                                gpio09             36.a33   -1.0000 V      -612.5414 mV       -100.0000 mV   0.0000 A       0       
+ 1800     7     CT_GPIO010                               gpio10             36.c33   -1.0000 V      -592.6636 mV       -100.0000 mV   0.0000 A       0       
+ 1850     7     CT_GPIO011                               gpio11             36.a29   -1.0000 V      -593.8497 mV       -100.0000 mV   0.0000 A       0       
+ 1900     7     CT_GPIO012                               gpio12             36.c29   -1.0000 V      -584.9385 mV       -100.0000 mV   0.0000 A       0       
+ 1950     7     CT_KPDPWR_N                              kpdpwr_n           32.a33   -1.0000 V      -441.5281 mV       -100.0000 mV   0.0000 A       0       
+ 2000     7     CT_PON_1                                 pon_1              36.d28   -1.0000 V      -515.6397 mV       -100.0000 mV   0.0000 A       0       
+ 2050     7     CT_PS_HOLD                               ps_hold            36.c31   -1.0000 V      -414.0165 mV       -100.0000 mV   0.0000 A       0       
+ 2100     7     CT_LN_BBCLK_EN                           ln_bbclk_en        36.d2    -1.0000 V      -415.1384 mV       -100.0000 mV   0.0000 A       0       
+ 2150     7     CT_RESIN_N                               resin_n            32.b4    -1.0000 V      -440.1759 mV       -100.0000 mV   0.0000 A       0       
+ 2200     7     CT_XTAL_IN                               xtal_in            36.c3    -1.0000 V      -494.9091 mV       -100.0000 mV   0.0000 A       0       
+ 2250     7     CT_XTAL_OUT                              xtal_out           36.b2    -1.0000 V      -686.1067 mV       -100.0000 mV   0.0000 A       0       
+ 2300     7     CT_TEST_EN                               test_en            36.b4    -1.0000 V      -500.1223 mV       -100.0000 mV   0.0000 A       0       
+ 2350     7     CT_BAT_ID_THERM                          bat_id_therm       36.a3    -1.0000 V      -439.1015 mV       -100.0000 mV   0.0000 A       0       
+ 2400     7     CT_SPMI_CLK                              spmi_clk           32.b2    -1.0000 V      -412.9507 mV       -100.0000 mV   0.0000 A       0       
+ 2450     7     CT_SPMI_DATA                             spmi_data          32.d2    -1.0000 V      -401.5297 mV       -100.0000 mV   0.0000 A       0       
+ 2500     7     CT_SLEEP_CLK                             xo_therm_l2_l3              -1.0000 V      -413.4277 mV       -100.0000 mV   0.0000         0       
+ 2550     7     CT_XO_THERM_L2_                          vreg_wtr_l3_l1     41.d22   -1.0000 V      -585.6683 mV       -10.0000 mV    0.0000         0       
+ 2600     7     CT_VREG_WTR_L3_                          vbus_det_l7_l5     41.a8    -1.0000 V      -509.4348 mV       -10.0000 mV    0.0000         0       
+ 2650     7     CT_VBUS_DET_L7_                          ext_ecm            41.a4    -1.0000 V      -23.3914 mV        -10.0000 mV    0.0000         0       
+ 2700     7     CT_EXT_ECM                               vref_lpddr         41.a12   -1.0000 V      -593.1459 mV       -10.0000 mV    0.0000         0       
+ 2750     7     CT_VREF_LPDDR                            vref_mdm           28.d22   -1.0000 V      -420.1542 mV       -10.0000 mV    0.0000         0       
+ 2800     7     CT_VREF_MDM                              vreg_xo            28.d26   -1.0000 V      -427.8639 mV       -10.0000 mV    0.0000         0       
+ 2850     7     CT_VREG_XO                               vreg_rf            28.d30   -1.0000 V      -334.5643 mV       -10.0000 mV    0.0000         0       
+ 2900     7     CT_VREG_RF                                                  -1       -1.0000 V      -397.0549 mV       -10.0000 mV    0.0000         0       
+ 2950     7     CT_VREG_L1                                                  -1       -1.0000 V      -400.3172 mV       -10.0000 mV    0.0000         0       
+ 3000     7     CT_VREG_L2                                                  -1       -1.0000 V      -393.5502 mV       -10.0000 mV    0.0000         0       
+ 3050     7     CT_VREG_L3                               vreg_l4            41.a4    -1.0000 V      -22.6274 mV        -10.0000 mV    0.0000         0       
+ 3100     7     CT_VREG_L4                                                  -1       -1.0000 V      -409.0194 mV       -10.0000 mV    0.0000         0       
+ 3150     7     CT_VREG_L5                                                  -1       -1.0000 V      -594.3778 mV       -10.0000 mV    0.0000         0       
+ 3200     7     CT_VREG_L7                               vreg_l8            28.d22   -1.0000 V      -446.4246 mV       -10.0000 mV    0.0000         0       
+ 3250     7     CT_VREG_L8                               vreg_l9            28.d26   -1.0000 V      -143.0882 mV       -10.0000 mV    0.0000         0       
+ 3300     7     CT_VREG_L9                               vreg_l10           28.d30   -1.0000 V      -592.1132 mV       -10.0000 mV    0.0000         0       
+ 3350     7     CT_VREG_L10                              vreg_l11           28.a4    -1.0000 V      -593.4397 mV       -10.0000 mV    0.0000         0       
+ 3400     7     CT_VREG_L11                              vreg_l12           28.a8    -1.0000 V      -594.1641 mV       -10.0000 mV    0.0000         0       
+ 3450     7     CT_VREG_L12                              vreg_l13           28.a12   -1.0000 V      -591.8221 mV       -10.0000 mV    0.0000         0       
+ 3500     7     CT_VREG_L13                              vreg_s1            29.d18   -1.0000 V      -474.9287 mV       -10.0000 mV    0.0000         0       
+ 3550     7     CT_VREG_S1_BD                            vreg_s2            29.d22   -1.0000 V      -508.3292 mV       -10.0000 mV    0.0000         0       
+ 3600     7     CT_VREG_S2_BD                            vreg_s3            29.a4    -1.0000 V      -483.9638 mV       -10.0000 mV    0.0000         0       
+ 3650     7     CT_VREG_S3_BD                            vreg_s4            29.a8    -1.0000 V      -486.2286 mV       -10.0000 mV    0.0000         0       
+ 3700     7     CT_VREG_S4_BD                            vreg_s5            29.d26   -1.0000 V      -505.3856 mV       -10.0000 mV    0.0000         0       
+<ILEAK>
+ 301      7     VBAT_DVS                                                    -1       3.0000 V       3.6000 V           N/A            0.0000         0       
+ 302      7     IOFF_TEST_EN                             test_en_dcvi       29.d30   -0.5000 uA     0.0257 uA          0.5000 uA      0.0000 u       0       
+ 303      7     IOFF_XO_THERM                            xo_therm_l2_l3              -0.5000 uA     0.0309 uA          0.5000 uA      0.0000 u       0       
+ 304      7     IOFF_VREG_WTR                            vreg_wtr_l3_l1     41.d22   -1.0000 uA     -0.1933 uA         0.5000 uA      0.0000 u       0       
+ 305      7     IOFF_VBUS_DET                            vbus_det_l7_l5     41.a8    -0.5000 uA     0.0475 uA          0.5000 uA      0.0000 u       0       
+ 306      7     IOFF_EXT_ECM                             ext_ecm            41.a4    -1.0000 uA     -0.8319 uA         1.0000 uA      0.0000 u       0       
+ 307      7     IOFF_VREF_LPDDR                          vref_lpddr         41.a12   -1.0000 uA     -0.5384 uA         1.0000 uA      0.0000 u       0       
+ 308      7     IOFF_VREF_MDM                            vref_mdm           28.d22   -0.5000 uA     0.0526 uA          0.5000 uA      0.0000 u       0       
+ 309      7     IOFF_GPIO01                              gpio01             32.c33   -5.0000 uA     0.6610 uA          5.0000 uA      0.0000 u       0       
+ 310      7     IOFF_GPIO02                              gpio02             32.a29   -5.0000 uA     0.5927 uA          5.0000 uA      0.0000 u       0       
+ 311      7     IOFF_GPIO03                              gpio03             32.c29   -5.0000 uA     0.5907 uA          5.0000 uA      0.0000 u       0       
+ 312      7     IOFF_GPIO04                              gpio04             32.b28   -5.0000 uA     0.7233 uA          5.0000 uA      0.0000 u       0       
+ 313      7     IOFF_GPIO05                              gpio05             32.d28   -5.0000 uA     0.5045 uA          5.0000 uA      0.0000 u       0       
+ 314      7     IOFF_GPIO06                              gpio06             32.a31   -5.0000 uA     0.4694 uA          5.0000 uA      0.0000 u       0       
+ 315      7     IOFF_GPIO07                              gpio07             36.b32   -5.0000 uA     0.5975 uA          5.0000 uA      0.0000 u       0       
+ 316      7     IOFF_GPIO08                              gpio08             36.d32   -5.0000 uA     0.3680 uA          5.0000 uA      0.0000 u       0       
+ 317      7     IOFF_GPIO09                              gpio09             36.a33   -5.0000 uA     0.6638 uA          5.0000 uA      0.0000 u       0       
+ 318      7     IOFF_GPIO10                              gpio10             36.c33   -5.0000 uA     0.5148 uA          5.0000 uA      0.0000 u       0       
+ 319      7     IOFF_GPIO11                              gpio11             36.a29   -10.0000 uA    0.0036 uA          10.0000 uA     0.0000 u       0       
+ 320      7     IOFF_GPIO12                              gpio12             36.c29   -5.0000 uA     -0.0122 uA         5.0000 uA      0.0000 u       0       
+ 321      7     IOFF_PA_THERM1                           pa_therm1          32.b32   -1.0000 uA     -0.0066 uA         1.0000 uA      0.0000 u       0       
+ 322      7     IOFF_PA_THERM2                           pa_therm2          32.d32   -1.0000 uA     -0.0066 uA         1.0000 uA      0.0000 u       0       
+ 323      7     IOFF_PA_THERM3                           pa_therm3          32.c31   -1.0000 uA     0.0080 uA          1.0000 uA      0.0000 u       0       
+ 324      7     IOFF_PONRESET                            pon_reset_n        36.a31   -1.0000 uA     0.0078 uA          1.0000 uA      0.0000 u       0       
+ 325      7     IOFF_PS_HOLD                             ps_hold            36.c31   -1.0000 uA     -0.0157 uA         1.0000 uA      0.0000 u       0       
+ 326      7     IOFF_SPMI_CLK                            spmi_clk           32.b2    -1.0000 uA     -0.0130 uA         1.0000 uA      0.0000 u       0       
+ 327      7     IOFF_SPMI_DATA                           spmi_data          32.d2    -1.0000 uA     0.0022 uA          1.0000 uA      0.0000 u       0       
+ 328      7     IOFF_BBCLK_EN                            ln_bbclk_en        36.d2    -1.0000 uA     0.0110 uA          1.0000 uA      0.0000 u       0       
+ 329      7     IOFF_BAT_ID                              bat_id_therm       36.a3    -1.0000 uA     -0.0137 uA         1.0000 uA      0.0000 u       0       
+ 330      7     IOFF_SLEEPCLK                            sleep_clk          32.c3    -1.0000 uA     0.0725 uA          1.0000 uA      0.0000 u       0       
+ 331      7     IOFF_XTAL_IN                             xtal_in            36.c3    -1.0000 uA     -0.0109 uA         1.0000 uA      0.0000 u       0       
+ 332      7     IOFF_XTAL_OUT                            xtal_out           36.b2    -50.0000 uA    13.5188 uA         50.0000 uA     0.0000 u       0       
+ 333      7     IOFF_RESIN_N                             resin_n            32.b4    -100.0000 uA   -42.4897 uA        100.0000 uA    0.0000 u       0       
+<SPMI_ReadDFLT>
+ 6240     7     SPMI_ReadDFLT                            spmi_data          32.d2    0.0000         0.0000             0.0000         0.0000         0       
+<PBS_OTPPGM>
+ 5600     7     PBS_BURN_EN                                                 -1       N/A            0.0000             N/A            0.0000         0       
+ 5650     7     PBS_OTP_RawIs-1                                             -1       0.0000         0.0000             0.0000         0.0000         0       
+ 5700     7     TP_REV_0996                                                 -1       N/A            23.0000            N/A            0.0000         0       
+ 5750     7     FAB_ID_0997                                                 -1       N/A            17.0000            N/A            0.0000         0       
+ 5800     7     WAFER_ID_1000                                               -1       N/A            1.0000             N/A            0.0000         0       
+ 5850     7     X_COORD_1001                                                -1       N/A            13.0000            N/A            0.0000         0       
+ 5900     7     Y_COORD_1002                                                -1       N/A            15.0000            N/A            0.0000         0       
+ 5950     7     LotID_11_1004                                               -1       N/A            0.0000             N/A            0.0000         0       
+ 6000     7     LotID_10_1005                                               -1       N/A            0.0000             N/A            0.0000         0       
+ 6050     7     LotID_09_1006                                               -1       N/A            0.0000             N/A            0.0000         0       
+ 6100     7     LotID_08_1008                                               -1       N/A            0.0000             N/A            0.0000         0       
+ 6150     7     LotID_07_1009                                               -1       N/A            0.0000             N/A            0.0000         0       
+ 6200     7     LotID_06_1010                                               -1       N/A            0.0000             N/A            0.0000         0       
+ 6250     7     LotID_05_1012                                               -1       N/A            0.0000             N/A            0.0000         0       
+ 6300     7     LotID_04_1013                                               -1       N/A            0.0000             N/A            0.0000         0       
+ 6350     7     LotID_03_1014                                               -1       N/A            0.0000             N/A            0.0000         0       
+ 6400     7     LotID_02_1016                                               -1       N/A            0.0000             N/A            0.0000         0       
+ 6450     7     LotID_01_1017                                               -1       N/A            0.0000             N/A            0.0000         0       
+ 6500     7     LotID_00_1018                                               -1       N/A            0.0000             N/A            0.0000         0       
+ 6550     7     VARIANT_1020                                                -1       N/A            2.0000             N/A            0.0000         0       
+ 6600     7     PBS_REV_1021                                                -1       N/A            5.0000             N/A            0.0000         0       
+<PBS_OTPPGM_MarginCompare>
+ 6650     7     TPREV_0996                               SPMI_DATA          32.d2    N/A            23 CD              N/A            0              0       
+ 6651     7     PBSOTP_TPREV                             F                  -1       N/A            18 CD              N/A            0              0       
+ 6652     7     FABID_0997                               SPMI_DATA          32.d2    N/A            17 CD              N/A            0              0       
+ 6653     7     PBSOTP_FABID                                                -1       N/A            17 CD              N/A            0              0       
+ 6654     7     WFRID_1000                               SPMI_DATA          32.d2    N/A            1 CD               N/A            0              0       
+ 6655     7     PBSOTP_WFRID                                                -1       N/A            1 CD               N/A            0              0       
+ 6656     7     X_1001                                   SPMI_DATA          32.d2    N/A            13 CD              N/A            0              0       
+ 6657     7     PBSOTP_X                                 F                  -1       N/A            26 CD              N/A            0              0       
+ 6658     7     Y_1002                                   SPMI_DATA          32.d2    N/A            15 CD              N/A            0              0       
+ 6659     7     PBSOTP_Y                                 F                  -1       N/A            38 CD              N/A            0              0       
+ 6660     7     LotID11_1004                                                -1       N/A            0 ASC              N/A            0              0       
+ 6661     7     PBSOTP_LotID11                           F                  -1       N/A            68 ASC             N/A            0              0       
+ 6662     7     LotID10_1005                                                -1       N/A            0 ASC              N/A            0              0       
+ 6663     7     PBSOTP_LotID10                           F                  -1       N/A            75 ASC             N/A            0              0       
+ 6664     7     LotID09_1006                                                -1       N/A            0 ASC              N/A            0              0       
+ 6665     7     PBSOTP_LotID09                           F                  -1       N/A            52 ASC             N/A            0              0       
+ 6666     7     LotID08_1008                                                -1       N/A            0 ASC              N/A            0              0       
+ 6667     7     PBSOTP_LotID08                           F                  -1       N/A            56 ASC             N/A            0              0       
+ 6668     7     LotID07_1009                                                -1       N/A            0 ASC              N/A            0              0       
+ 6669     7     PBSOTP_LotID07                           F                  -1       N/A            54 ASC             N/A            0              0       
+ 6670     7     LotID06_1010                                                -1       N/A            0 ASC              N/A            0              0       
+ 6671     7     PBSOTP_LotID06                           F                  -1       N/A            54 ASC             N/A            0              0       
+ 6672     7     LotID05_1012                                                -1       N/A            0 ASC              N/A            0              0       
+ 6673     7     PBSOTP_LotID05                                              -1       N/A            0 ASC              N/A            0              0       
+ 6674     7     LotID04_1013                                                -1       N/A            0 ASC              N/A            0              0       
+ 6675     7     PBSOTP_LotID04                                              -1       N/A            0 ASC              N/A            0              0       
+ 6676     7     LotID03_1014                                                -1       N/A            0 ASC              N/A            0              0       
+ 6677     7     PBSOTP_LotID03                                              -1       N/A            0 ASC              N/A            0              0       
+ 6678     7     LotID02_1016                                                -1       N/A            0 ASC              N/A            0              0       
+ 6679     7     PBSOTP_LotID02                                              -1       N/A            0 ASC              N/A            0              0       
+ 6680     7     LotID01_1017                                                -1       N/A            0 ASC              N/A            0              0       
+ 6681     7     PBSOTP_LotID01                                              -1       N/A            0 ASC              N/A            0              0       
+ 6682     7     LotID00_1018                                                -1       N/A            0 ASC              N/A            0              0       
+ 6683     7     PBSOTP_LotID00                                              -1       N/A            0 ASC              N/A            0              0       
+SERIAL= DK4866_1_26_38, SERIAL_TYPE= QC_LOTWAFXY, SITE=7
+ 6690     7     PBSOTP_OK_1020                           spmi_data          32.d2    N/A            2 CD               N/A            2              0       
+ 6691     7     PBSOTP_OK_1021                           spmi_data          32.d2    N/A            5 CD               N/A            5              0       
+ 6695     7     PBS_OTP_FailCnt                                             -1       0.0000 BITS    0.0000 BITS        0.0000 BITS    0.0000         0       
+<OTPNormal_Normal_Compare>
+ 6700     7     PBSOTP_RDNRM2V8                                             -1       0.0000 BITS    0.0000 BITS        0.0000 BITS    0.0000         0       
+<KGD_SCAN>
+ 6800     7     Integrity_1                                                 -1       -1.0000        -1.0000            -1.0000        0.0000         0       
+ 6850     7     Serial_1                                                    -1       -1.0000        -1.0000            -1.0000        0.0000         0       
+ 6900     7     Integrity_2                                                 -1       -1.0000        -1.0000            -1.0000        0.0000         0       
+ 6950     7     Serial_2                                                    -1       -1.0000        -1.0000            -1.0000        0.0000         0       
+ 7000     7     Integrity_5                                                 -1       -1.0000        -1.0000            -1.0000        0.0000         0       
+ 7050     7     Serial_5                                                    -1       -1.0000        -1.0000            -1.0000        0.0000         0       
+<KGD_MBIST>
+ 7200     7     tapbistv_1                                                  -1       1.0000         1.0000             1.0000         0.0000         0       
+ 7250     7     membistv_1                                                  -1       1.0000         1.0000             1.0000         0.0000         0       
+ 7300     7     membistv_1_PRT                                              -1       1.0000         1.0000             1.0000         0.0000         0       
+<POWER_ON_SETUP>
+ 7450     7     IDD_OFF_PRE_WT                                              -1       0.0000 mS      70.0000 mS         251.0000 mS    0.0000 m       0       
+ 7500     7     IDD_OFF_PRE                                                 -1       -20.0000 uA    12.5411 uA         100.0000 uA    0.0000 u       0       
+<HF_PMOS_NMOS_IOFF>
+ 7650     7     IOFF_PMOS_S1                                                -1       -2.0000 uA     0.0093 uA          2.0000 uA      0.0000 u       0       
+ 7700     7     IOFF_PMOS_S2                                                -1       -2.0000 uA     -0.0239 uA         2.0000 uA      0.0000 u       0       
+ 7750     7     IOFF_PMOS_S3                                                -1       -2.0000 uA     -0.0240 uA         2.0000 uA      0.0000 u       0       
+ 7800     7     IOFF_PMOS_S4                                                -1       -3.0000 uA     -0.3070 uA         2.0000 uA      0.0000 u       0       
+ 7850     7     IOFF_PMOS_S5                                                -1       -2.0000 uA     0.0041 uA          2.0000 uA      0.0000 u       0       
+ 7900     7     IOFF_NMOS_S1                                                -1       -8.0000 uA     3.2595 uA          9.0000 uA      0.0000 u       0       
+ 7950     7     IOFF_NMOS_S2                                                -1       -8.0000 uA     3.1022 uA          9.0000 uA      0.0000 u       0       
+ 8000     7     IOFF_NMOS_S3                                                -1       -8.0000 uA     3.0397 uA          9.0000 uA      0.0000 u       0       
+ 8050     7     IOFF_NMOS_S4                                                -1       -8.0000 uA     1.9441 uA          9.0000 uA      0.0000 u       0       
+ 8100     7     IOFF_NMOS_S5                                                -1       -8.0000 uA     3.1926 uA          9.0000 uA      0.0000 u       0       
+ 8110     7     S1_STRONG_PD                                                -1       10.0000 Ohms   14.5969 Ohms       20.0000 Ohms   0.0000         0       
+ 8120     7     S2_STRONG_PD                                                -1       10.0000 Ohms   14.8693 Ohms       20.0000 Ohms   0.0000         0       
+ 8130     7     S3_STRONG_PD                                                -1       10.0000 Ohms   14.8877 Ohms       20.0000 Ohms   0.0000         0       
+ 8140     7     S5_STRONG_PD                                                -1       10.0000 Ohms   15.1717 Ohms       20.0000 Ohms   0.0000         0       
+<TRIM_MBG_AUTOCAL_DCVI>
+ 8250     7     F_MBG_OK_VAL                                                -1       -63.0000 CD    4.0000 CD          63.0000 CD     0.0000         0       
+ 8300     7     F_MBG_OVTMP_VAL                                             -1       -32.0000 CD    4.0000 CD          32.0000 CD     0.0000         0       
+ 8350     7     F_MBG_1P25_VAL                                              -1       -127.0000 CD   49.0000 CD         127.0000 CD    0.0000         0       
+ 8400     7     F_MBG_0P625_VAL                                             -1       -15.0000 CD    1.0000 CD          15.0000 CD     0.0000         0       
+ 8450     7     F_MBG_0P3125_VAL                                            -1       -15.0000 CD    7.0000 CD          15.0000 CD     0.0000         0       
+ 8500     7     F_VTEMP_VAL                                                 -1       -63.0000 CD    16.0000 CD         63.0000 CD     0.0000         0       
+ 8550     7     F_VTEMP_REF_VAL                                             -1       -16.0000 CD    1.0000 CD          16.0000 CD     0.0000         0       
+ 8600     7     F_VTEMP_BUF_VAL                                             -1       -63.0000 CD    16.0000 CD         63.0000 CD     0.0000         0       
+<HF_RDSON_OFF>
+ 8750     7     S1_36P_RDSON                                                -1       10.0000 mOhms  52.4192 mOhms      125.0000 mOhms 0.0000 m       0       
+ 8800     7     S5_36P_RDSON                                                -1       10.0000 mOhms  97.3739 mOhms      175.0000 mOhms 0.0000 m       0       
+ 8850     7     S1_P_RDSON                                                  -1       40.0000 mOhms  83.7253 mOhms      275.0000 mOhms 0.0000 m       0       
+ 8900     7     S2_P_RDSON                                                  -1       15.0000 mOhms  211.8298 mOhms     375.0000 mOhms 0.0000 m       0       
+ 8950     7     S3_P_RDSON                                                  -1       20.0000 mOhms  124.8658 mOhms     200.0000 mOhms 0.0000 m       0       
+ 9000     7     S4_P_RDSON                                                  -1       20.0000 mOhms  121.5996 mOhms     200.0000 mOhms 0.0000 m       0       
+ 9050     7     S5_P_RDSON                                                  -1       100.0000 mOhms 155.9071 mOhms     300.0000 mOhms 0.0000 m       0       
+ 9100     7     S1_N_RDSON                                                  -1       10.0000 mOhms  27.3787 mOhms      150.0000 mOhms 0.0000 m       0       
+ 9150     7     S2_N_RDSON                                                  -1       10.0000 mOhms  61.0340 mOhms      150.0000 mOhms 0.0000 m       0       
+ 9200     7     S3_N_RDSON                                                  -1       10.0000 mOhms  38.4704 mOhms      150.0000 mOhms 0.0000 m       0       
+ 9250     7     S4_N_RDSON                                                  -1       10.0000 mOhms  37.7110 mOhms      150.0000 mOhms 0.0000 m       0       
+ 9300     7     S5_N_RDSON                                                  -1       10.0000 mOhms  47.4707 mOhms      150.0000 mOhms 0.0000 m       0       
+<POWER_ON>
+ 9450     7     PON_RESET_WT                                                -1       0.0000 ms      80.0000 ms         251.0000 ms    0.0000 m       0       
+ 9460     7     PRE_IDD_ACTIVE                                              -1       1.5000 mA      6.3991 mA          12.0000 mA     0.0000 m       0       
+<XO_19P2_AGC_RMA>
+ 9550     7     XO_19P2_AGC_EN                                              -1       -264.0000 uA   -218.0433 uA       -150.0000 uA   0.0000 u       0       
+ 9600     7     XO_19P2_AGC_DIS                                             -1       -5.0000 uA     -0.0871 uA         5.0000 uA      0.0000 u       0       
+ 9650     7     XO_19P2_IN_V                                                -1       -900.0000 mV   -384.5225 mV       -200.0000 mV   0.0000         0       
+<MISC_BUFFER_OFFSET>
+ 9850     7     BUF1_OFFS_1p25                                              -1       -50.0000 mV    -0.3434 mV         50.0000 mV     0.0000 m       0       
+ 9900     7     BUF1_OFFS_p625                                              -1       -50.0000 mV    -0.9286 mV         50.0000 mV     0.0000 m       0       
+ 9950     7     BUF1_OFFS_p3125                                             -1       -50.0000 mV    -0.9192 mV         50.0000 mV     0.0000 m       0       
+ 10000    7     BUF3_OFFS_1p215                                             -1       -50.0000 mV    1.3329 mV          50.0000 mV     0.0000 m       0       
+ 10050    7     BUF4_OFFS_1p823                                             -1       -50.0000 mV    1.4216 mV          50.0000 mV     0.0000 m       0       
+<TRIM_MBG>
+ 10150    7     T_MBG_1P25__CD                                              -1       0.0000 CD      49.0000 CD         255.0000 CD    0.0000         0       
+ 10200    7     T_MBG_1P25__V                                               -1       1.0000 V       1.2490 V           2.0000 V       0.0000         0       
+ 10250    7     T_MBG_0P625__CD                                             -1       0.0000 CD      1.0000 CD          255.0000 CD    0.0000         0       
+ 10300    7     T_MBG_0P625__V                                              -1       525.0000 mV    624.8064 mV        725.0000 mV    0.0000 m       0       
+ 10350    7     T_MBG_0P3125__CD                                            -1       0.0000 CD      7.0000 CD          255.0000 CD    0.0000         0       
+ 10400    7     T_MBG_0P3125__V                                             -1       212.5000 mV    312.2614 mV        412.5000 mV    0.0000 m       0       
+ 10450    7     T_MBG_IREF1_CD                                              -1       0.0000 CD      6.0000 CD          255.0000 CD    0.0000         0       
+ 10500    7     T_MBG_IREF1_I                                               -1       -2.0000 uA     -0.9967 uA         1.0000 uA      0.0000 u       0       
+ 10550    7     T_MBG_IPTAT_CD                                              -1       0.0000 CD      0.0000 CD          255.0000 CD    0.0000         0       
+ 10600    7     T_IREF_TEMP_CD                                              -1       0.0000 CD      5.0000 CD          255.0000 CD    0.0000         0       
+ 10650    7     T_VBG_TEMP_CD                                               -1       0.0000 CD      12.0000 CD         255.0000 CD    0.0000         0       
+ 10700    7     T_CC_GAIN_CD                                                -1       0.0000 CD      0.0000 CD          255.0000 CD    0.0000         0       
+ 10750    7     T_CC_HI_CD                                                  -1       0.0000 CD      0.0000 CD          255.0000 CD    0.0000         0       
+ 10800    7     T_CC_LOW_CD                                                 -1       0.0000 CD      0.0000 CD          255.0000 CD    0.0000         0       
+ 10850    7     T_MBG_1P25_VAL                                              -1       -127.0000 CD   0.0000 CD          127.0000 CD    0.0000         0       
+ 10900    7     T_MBG_0P625_VAL                                             -1       -127.0000 CD   0.0000 CD          127.0000 CD    0.0000         0       
+ 10950    7     T_MBG_0P3125_VAL                                            -1       -127.0000 CD   0.0000 CD          127.0000 CD    0.0000         0       
+ 11000    7     T_IREF_CD_VAL                                               -1       -127.0000 CD   6.0000 CD          127.0000 CD    0.0000         0       
+<TRIM_CLK>
+ 11150    7     T_LFRC_CD                                                   -1       0.0000 CD      10.0000 CD         31.0000 CD     0.0000         0       
+ 11200    7     T_LFRC_F                                                    -1       93.0000 KHz    98.8391 KHz        103.0000 KHz   0.0000 K       0       
+ 11250    7     T_HFRC_CD                                                   -1       0.0000 CD      8.0000 CD          31.0000 CD     0.0000         0       
+ 11300    7     T_HFRC_F                                                    -1       500.0000 KHz   614.6463 KHz       700.0000 KHz   0.0000 K       0       
+<TRIM_VDDGEN>
+ 11400    7     T_MINIBG_CD                                                 -1       1.0000         8.0000             15.0000        0.0000         0       
+ 11401    7     T_AVDD_CD                                                   -1       1.0000         7.0000             14.0000        0.0000         0       
+ 11402    7     T_MINIBG_V                                                  -1       1.1780 V       1.2131 V           1.2510 V       0.0000         0       
+ 11403    7     T_AVDD_V                                                    -1       1.7000 V       1.8126 V           2.0000 V       0.0000         0       
+<TRIM_BUCK_VREF>
+ 11700    7     T_HF_VREF_CD                                                -1       1.0000 CD      30.0000 CD         62.0000 CD     0.0000         0       
+ 11750    7     T_HF_VREF_FLT                                               -1       4.0000 CD      4.0000 CD          4.0000 CD      0.0000         0       
+ 11800    7     T_HF_VREF_V                                                 -1       500.0000 mV    625.6115 mV        750.0000 mV    0.0000 m       0       
+ 11850    7     T_HF_ECM_CD                                                 -1       1.0000 CD      15.0000 CD         62.0000 CD     0.0000         0       
+ 11900    7     T_ECM_VREF_FLT                                              -1       4.0000 CD      4.0000 CD          4.0000 CD      0.0000         0       
+ 11950    7     ECM_VREF_V4_0                                               -1       -5.0000 V      1.0494 V           5.0000 V       0.0000         0       
+ 12000    7     ECM_VREF_V3_0                                               -1       -5.0000 V      747.8035 mV        5.0000 V       0.0000         0       
+ 12050    7     ECM_VREF_V_0                                                -1       -5.0000 V      301.5500 mV        5.0000 V       0.0000         0       
+ 12100    7     ECM_VREF_V4_1                                               -1       -5.0000 V      1.0996 V           5.0000 V       0.0000         0       
+ 12150    7     ECM_VREF_V3_1                                               -1       -5.0000 V      697.8487 mV        5.0000 V       0.0000         0       
+ 12200    7     ECM_VREF_V_1                                                -1       -5.0000 V      401.7124 mV        5.0000 V       0.0000         0       
+ 12250    7     ECM_VREF_V4_2                                               -1       -5.0000 V      1.1496 V           5.0000 V       0.0000         0       
+ 12300    7     ECM_VREF_V3_2                                               -1       -5.0000 V      647.4793 mV        5.0000 V       0.0000         0       
+ 12350    7     ECM_VREF_V_2                                                -1       -5.0000 V      502.1368 mV        5.0000 V       0.0000         0       
+ 12400    7     ECM_VREF_V4_3                                               -1       -5.0000 V      1.1998 V           5.0000 V       0.0000         0       
+ 12450    7     ECM_VREF_V3_3                                               -1       -5.0000 V      597.3250 mV        5.0000 V       0.0000         0       
+ 12500    7     ECM_VREF_V_3                                                -1       -5.0000 V      602.5025 mV        5.0000 V       0.0000         0       
+<TRIM_BUCK_ERR_AMP>
+ 12600    7     T_ERR_S1_CD                                                 -1       1.0000 CD      6.0000 CD          30.0000 CD     0.0000         0       
+ 12650    7     T_ERR_S2_CD                                                 -1       1.0000 CD      9.0000 CD          30.0000 CD     0.0000         0       
+ 12700    7     T_ERR_S3_CD                                                 -1       1.0000 CD      7.0000 CD          30.0000 CD     0.0000         0       
+ 12750    7     T_ERR_S4_CD                                                 -1       1.0000 CD      7.0000 CD          30.0000 CD     0.0000         0       
+ 12800    7     T_ERR_S5_CD                                                 -1       1.0000 CD      9.0000 CD          30.0000 CD     0.0000         0       
+ 12850    7     T_ERR_S1_FLT                                                -1       4.0000 CD      4.0000 CD          4.0000 CD      0.0000         0       
+ 12900    7     T_ERR_S2_FLT                                                -1       4.0000 CD      4.0000 CD          4.0000 CD      0.0000         0       
+ 12950    7     T_ERR_S3_FLT                                                -1       4.0000 CD      4.0000 CD          4.0000 CD      0.0000         0       
+ 13000    7     T_ERR_S4_FLT                                                -1       4.0000 CD      4.0000 CD          4.0000 CD      0.0000         0       
+ 13050    7     T_ERR_S5_FLT                                                -1       2.0000 CD      4.0000 CD          4.0000 CD      0.0000         0       
+<TRIM_BUCK_PWM_THR>
+ 13150    7     T_PWM_S1_CD                                                 -1       0.0000 CD      7.0000 CD          31.0000 CD     0.0000         0       
+ 13200    7     T_PWM_S2_CD                                                 -1       0.0000 CD      7.0000 CD          31.0000 CD     0.0000         0       
+ 13250    7     T_PWM_S3_CD                                                 -1       0.0000 CD      7.0000 CD          31.0000 CD     0.0000         0       
+ 13300    7     T_PWM_S4_CD                                                 -1       0.0000 CD      7.0000 CD          31.0000 CD     0.0000         0       
+ 13350    7     T_PWM_S5_CD                                                 -1       0.0000 CD      8.0000 CD          31.0000 CD     0.0000         0       
+ 13400    7     T_PWM_S1_STATUS                                             -1       0.0000 CD      1.0000 CD          255.0000 CD    0.0000         0       
+ 13450    7     T_PWM_S2_STATUS                                             -1       0.0000 CD      1.0000 CD          255.0000 CD    0.0000         0       
+ 13500    7     T_PWM_S3_STATUS                                             -1       0.0000 CD      1.0000 CD          255.0000 CD    0.0000         0       
+ 13550    7     T_PWM_S4_STATUS                                             -1       0.0000 CD      1.0000 CD          255.0000 CD    0.0000         0       
+ 13600    7     T_PWM_S5_STATUS                                             -1       0.0000 CD      1.0000 CD          255.0000 CD    0.0000         0       
+<TRIM_BUCK_PFM_THR>
+ 13700    7     T_PFM_S1_CD                                                 -1       0.0000 CD      10.0000 CD         31.0000 CD     0.0000         0       
+ 13750    7     T_PFM_S2_CD                                                 -1       0.0000 CD      9.0000 CD          31.0000 CD     0.0000         0       
+ 13800    7     T_PFM_S3_CD                                                 -1       0.0000 CD      10.0000 CD         31.0000 CD     0.0000         0       
+ 13850    7     T_PFM_S4_CD                                                 -1       0.0000 CD      8.0000 CD          31.0000 CD     0.0000         0       
+ 13900    7     T_PFM_S5_CD                                                 -1       0.0000 CD      9.0000 CD          31.0000 CD     0.0000         0       
+ 13950    7     T_PFM_S1_STATUS                                             -1       0.0000 CD      1.0000 CD          255.0000 CD    0.0000         0       
+ 14000    7     T_PFM_S2_STATUS                                             -1       0.0000 CD      1.0000 CD          255.0000 CD    0.0000         0       
+ 14050    7     T_PFM_S3_STATUS                                             -1       0.0000 CD      1.0000 CD          255.0000 CD    0.0000         0       
+ 14100    7     T_PFM_S4_STATUS                                             -1       0.0000 CD      1.0000 CD          255.0000 CD    0.0000         0       
+ 14150    7     T_PFM_S5_STATUS                                             -1       0.0000 CD      1.0000 CD          255.0000 CD    0.0000         0       
+<TRIM_BUCK_VDIP>
+ 14250    7     T_VDIP_S1_CD                                                -1       0.0000 CD      18.0000 CD         31.0000 CD     0.0000         0       
+ 14300    7     T_VDIP_S2_CD                                                -1       0.0000 CD      17.0000 CD         31.0000 CD     0.0000         0       
+ 14350    7     T_VDIP_S3_CD                                                -1       0.0000 CD      18.0000 CD         31.0000 CD     0.0000         0       
+ 14400    7     T_VDIP_S4_CD                                                -1       0.0000 CD      18.0000 CD         31.0000 CD     0.0000         0       
+ 14450    7     T_VDIP_S5_CD                                                -1       0.0000 CD      18.0000 CD         31.0000 CD     0.0000         0       
+ 14500    7     T_VDIP_S1_STATUS                                            -1       0.0000 CD      1.0000 CD          255.0000 CD    0.0000         0       
+ 14550    7     T_VDIP_S2_STATUS                                            -1       0.0000 CD      1.0000 CD          255.0000 CD    0.0000         0       
+ 14600    7     T_VDIP_S3_STATUS                                            -1       0.0000 CD      1.0000 CD          255.0000 CD    0.0000         0       
+ 14650    7     T_VDIP_S4_STATUS                                            -1       0.0000 CD      1.0000 CD          255.0000 CD    0.0000         0       
+ 14700    7     T_VDIP_S5_STATUS                                            -1       0.0000 CD      1.0000 CD          255.0000 CD    0.0000         0       
+<TRIM_BUCK_IPLIMIT_ECM>
+ 14800    7     T_S1_IPLIM_CD                                               -1       1.0000 CD      9.0000 CD          14.0000 CD     0.0000         0       
+ 14850    7     T_S2_IPLIM_CD                                               -1       1.0000 CD      7.0000 CD          14.0000 CD     0.0000         0       
+ 14900    7     T_S3_IPLIM_CD                                               -1       1.0000 CD      9.0000 CD          14.0000 CD     0.0000         0       
+ 14950    7     T_S4_IPLIM_CD                                               -1       1.0000 CD      7.0000 CD          14.0000 CD     0.0000         0       
+ 15000    7     T_S5_IPLIM_CD                                               -1       1.0000 CD      10.0000 CD         14.0000 CD     0.0000         0       
+ 15050    7     T_IPLIM_S1_FLT                                              -1       4.0000 CD      4.0000 CD          4.0000 CD      0.0000         0       
+ 15100    7     T_IPLIM_S2_FLT                                              -1       4.0000 CD      4.0000 CD          4.0000 CD      0.0000         0       
+ 15150    7     T_IPLIM_S3_FLT                                              -1       4.0000 CD      4.0000 CD          4.0000 CD      0.0000         0       
+ 15200    7     T_IPLIM_S4_FLT                                              -1       4.0000 CD      4.0000 CD          4.0000 CD      0.0000         0       
+ 15250    7     T_IPLIM_S5_FLT                                              -1       4.0000 CD      4.0000 CD          4.0000 CD      0.0000         0       
+ 15300    7     ECM_10ua_S1                                                 -1       200.0000 CD    298.0000 CD        2.7000 KCD     0.0000         0       
+ 15350    7     ECM_10ua_S2                                                 -1       200.0000 CD    302.0000 CD        2.7000 KCD     0.0000         0       
+ 15400    7     ECM_10ua_S3                                                 -1       200.0000 CD    309.0000 CD        2.7000 KCD     0.0000         0       
+ 15450    7     ECM_10ua_S4                                                 -1       200.0000 CD    345.0000 CD        2.7000 KCD     0.0000         0       
+ 15500    7     ECM_10ua_S5                                                 -1       200.0000 CD    299.0000 CD        2.7000 KCD     0.0000         0       
+ 15550    7     ECM_145ma_S1                                                -1       500.0000 CD    901.0000 CD        9.0000 KCD     0.0000         0       
+ 15600    7     ECM_145ma_S2                                                -1       500.0000 CD    2.4020 KCD         24.0000 KCD    0.0000         0       
+ 15650    7     ECM_145ma_S3                                                -1       1.0000 KCD     1.4500 KCD         13.0000 KCD    0.0000         0       
+ 15700    7     ECM_140ma_S4                                                -1       500.0000 CD    1.4560 KCD         13.0000 KCD    0.0000         0       
+ 15750    7     ECM_145ma_S5                                                -1       1.0000 KCD     1.7880 KCD         16.0000 KCD    0.0000         0       
+ 15800    7     ECM_KIref_S1                                                -1       6.0000 u       8.4308 u           11.0000 u      0.0000 u       0       
+ 15850    7     ECM_KIref_S2                                                -1       6.0000 u       8.7313 u           11.0000 u      0.0000 u       0       
+ 15900    7     ECM_KIref_S3                                                -1       6.0000 u       8.7584 u           11.0000 u      0.0000 u       0       
+ 15950    7     ECM_KIref_S4                                                -1       6.0000 u       8.0639 u           11.0000 u      0.0000 u       0       
+ 16000    7     ECM_KIref_S5                                                -1       6.0000 u       8.6350 u           11.0000 u      0.0000 u       0       
+ 16050    7     ECM_K_CD_S1                                                 -1       0.0000 CD      77.0000 CD         255.0000 CD    0.0000         0       
+ 16100    7     ECM_K_CD_S2                                                 -1       0.0000 CD      87.0000 CD         255.0000 CD    0.0000         0       
+ 16150    7     ECM_K_CD_S3                                                 -1       0.0000 CD      88.0000 CD         255.0000 CD    0.0000         0       
+ 16200    7     ECM_K_CD_S4                                                 -1       0.0000 CD      66.0000 CD         255.0000 CD    0.0000         0       
+ 16250    7     ECM_K_CD_S5                                                 -1       0.0000 CD      84.0000 CD         255.0000 CD    0.0000         0       
+<TRIM_BUCK_AUTO>
+ 16350    7     T_AUTO_S1_I                                                 -1       -999.0000 mA   122.3235 mA        999.0000 mA    0.0000 m       0       
+ 16400    7     T_AUTO_S2_I                                                 -1       -999.0000 mA   137.7000 mA        999.0000 mA    0.0000 m       0       
+ 16450    7     T_AUTO_S3_I                                                 -1       -999.0000 mA   127.3725 mA        999.0000 mA    0.0000 m       0       
+ 16500    7     T_AUTO_S4_I                                                 -1       -999.0000 mA   143.0550 mA        999.0000 mA    0.0000 m       0       
+ 16550    7     T_AUTO_S5_I                                                 -1       -999.0000 mA   142.9785 mA        999.0000 mA    0.0000 m       0       
+ 16600    7     T_AUTO_S1_CD                                                -1       1.0000 CD      9.0000 CD          15.0000 CD     0.0000         0       
+ 16650    7     T_AUTO_S2_CD                                                -1       1.0000 CD      7.0000 CD          14.0000 CD     0.0000         0       
+ 16700    7     T_AUTO_S3_CD                                                -1       1.0000 CD      7.0000 CD          15.0000 CD     0.0000         0       
+ 16750    7     T_AUTO_S4_CD                                                -1       1.0000 CD      12.0000 CD         14.0000 CD     0.0000         0       
+ 16800    7     T_AUTO_S5_CD                                                -1       1.0000 CD      9.0000 CD          14.0000 CD     0.0000         0       
+ 16850    7     T_AUTO_S1_FLT                                               -1       2.0000 CD      4.0000 CD          4.0000 CD      0.0000         0       
+ 16900    7     T_AUTO_S2_FLT                                               -1       4.0000 CD      4.0000 CD          4.0000 CD      0.0000         0       
+ 16950    7     T_AUTO_S3_FLT                                               -1       2.0000 CD      4.0000 CD          4.0000 CD      0.0000         0       
+ 17000    7     T_AUTO_S4_FLT                                               -1       4.0000 CD      4.0000 CD          4.0000 CD      0.0000         0       
+ 17050    7     T_AUTO_S5_FLT                                               -1       4.0000 CD      4.0000 CD          4.0000 CD      0.0000         0       
+<TRIM_BUCK_INZ>
+ 17200    7     T_S1_INZ_CD                                                 -1       1.0000 CD      8.0000 CD          14.0000 CD     0.0000         0       
+ 17250    7     T_S2_INZ_CD                                                 -1       1.0000 CD      8.0000 CD          14.0000 CD     0.0000         0       
+ 17300    7     T_S3_INZ_CD                                                 -1       1.0000 CD      8.0000 CD          14.0000 CD     0.0000         0       
+ 17350    7     T_S4_INZ_CD                                                 -1       1.0000 CD      7.0000 CD          14.0000 CD     0.0000         0       
+ 17400    7     T_S5_INZ_CD                                                 -1       1.0000 CD      9.0000 CD          14.0000 CD     0.0000         0       
+ 17450    7     T_INZ_S1_FLT                                                -1       4.0000 CD      4.0000 CD          4.0000 CD      0.0000         0       
+ 17500    7     T_INZ_S2_FLT                                                -1       4.0000 CD      4.0000 CD          4.0000 CD      0.0000         0       
+ 17550    7     T_INZ_S3_FLT                                                -1       4.0000 CD      4.0000 CD          4.0000 CD      0.0000         0       
+ 17600    7     T_INZ_S4_FLT                                                -1       4.0000 CD      4.0000 CD          4.0000 CD      0.0000         0       
+ 17650    7     T_INZ_S5_FLT                                                -1       4.0000 CD      4.0000 CD          4.0000 CD      0.0000         0       
+<TRIM_BUCK_RAMP>
+ 17750    7     T_RAMP_S1_CD                                                -1       0.0000 CD      13.0000 CD         31.0000 CD     0.0000         0       
+ 17800    7     T_RAMP_S2_CD                                                -1       0.0000 CD      13.0000 CD         31.0000 CD     0.0000         0       
+ 17850    7     T_RAMP_S3_CD                                                -1       0.0000 CD      14.0000 CD         31.0000 CD     0.0000         0       
+ 17900    7     T_RAMP_S4_CD                                                -1       0.0000 CD      14.0000 CD         31.0000 CD     0.0000         0       
+ 17950    7     T_RAMP_S5_CD                                                -1       0.0000 CD      14.0000 CD         31.0000 CD     0.0000         0       
+ 18000    7     T_RAMP_S1_STATUS                                            -1       0.0000 CD      1.0000 CD          255.0000 CD    0.0000         0       
+ 18050    7     T_RAMP_S2_STATUS                                            -1       0.0000 CD      1.0000 CD          255.0000 CD    0.0000         0       
+ 18100    7     T_RAMP_S3_STATUS                                            -1       0.0000 CD      1.0000 CD          255.0000 CD    0.0000         0       
+ 18150    7     T_RAMP_S4_STATUS                                            -1       0.0000 CD      1.0000 CD          255.0000 CD    0.0000         0       
+ 18200    7     T_RAMP_S5_STATUS                                            -1       0.0000 CD      1.0000 CD          255.0000 CD    0.0000         0       
+<TRIM_LDO>
+ 18300    7     T_LDO1_CD                                                   -1       0.0000 CD      15.0000 CD         30.0000 CD     0.0000         0       
+ 18350    7     T_LDO2_CD                                                   -1       0.0000 CD      16.0000 CD         30.0000 CD     0.0000         0       
+ 18400    7     T_LDO3_CD                                                   -1       0.0000 CD      18.0000 CD         30.0000 CD     0.0000         0       
+ 18450    7     T_LDO4_CD                                                   -1       0.0000 CD      16.0000 CD         30.0000 CD     0.0000         0       
+ 18500    7     T_LDO5_CD                                                   -1       0.0000 CD      14.0000 CD         30.0000 CD     0.0000         0       
+ 18550    7     T_LDO6_CD                                                   -1       0.0000 CD      8.0000 CD          30.0000 CD     0.0000         0       
+ 18600    7     T_LDO7_CD                                                   -1       0.0000 CD      2.0000 CD          30.0000 CD     0.0000         0       
+ 18650    7     T_LDO8_CD                                                   -1       0.0000 CD      14.0000 CD         30.0000 CD     0.0000         0       
+ 18700    7     T_LDO9_CD                                                   -1       0.0000 CD      14.0000 CD         30.0000 CD     0.0000         0       
+ 18750    7     T_LDO10_CD                                                  -1       0.0000 CD      13.0000 CD         30.0000 CD     0.0000         0       
+ 18800    7     T_LDO11_CD                                                  -1       0.0000 CD      6.0000 CD          30.0000 CD     0.0000         0       
+ 18850    7     T_LDO12_CD                                                  -1       0.0000 CD      14.0000 CD         30.0000 CD     0.0000         0       
+ 18900    7     T_LDO13_CD                                                  -1       0.0000 CD      14.0000 CD         30.0000 CD     0.0000         0       
+ 18950    7     T_LDO1_V                                                    -1       1.1400 V       1.1970 V           1.2240 V       0.0000         0       
+ 19000    7     T_LDO2_V                                                    -1       1.1400 V       1.1966 V           1.2240 V       0.0000         0       
+ 19050    7     T_LDO3_V                                                    -1       950.0000 mV    997.8737 mV        1.0200 V       0.0000         0       
+ 19100    7     T_LDO4_V                                                    -1       881.6000 mV    926.8019 mV        946.5600 mV    0.0000         0       
+ 19150    7     T_LDO5_V                                                    -1       1.7100 V       1.7999 V           1.8360 V       0.0000         0       
+ 19200    7     T_LDO6_V                                                    -1       1.7100 V       1.8000 V           1.8360 V       0.0000         0       
+ 19250    7     T_LDO7_V                                                    -1       1.7100 V       1.7995 V           1.8360 V       0.0000         0       
+ 19300    7     T_LDO8_V                                                    -1       950.0000 mV    999.4784 mV        1.0200 V       0.0000         0       
+ 19350    7     T_LDO9_V                                                    -1       904.4000 mV    951.0153 mV        971.0400 mV    0.0000         0       
+ 19400    7     T_LDO10_V                                                   -1       2.9336 V       3.0883 V           3.1498 V       0.0000         0       
+ 19450    7     T_LDO11_V                                                   -1       1.7100 V       1.7997 V           1.8360 V       0.0000         0       
+ 19500    7     T_LDO12_V                                                   -1       2.5688 V       2.7027 V           2.7581 V       0.0000         0       
+ 19550    7     T_LDO13_V                                                   -1       2.5688 V       2.7038 V           2.7581 V       0.0000         0       
+<TRIM_LDO_RM>
+ 19650    7     T_RM_LDO1_CD                                                -1       0.0000 CD      18.0000 CD         30.0000 CD     0.0000         0       
+ 19700    7     T_RM_LDO2_CD                                                -1       0.0000 CD      18.0000 CD         30.0000 CD     0.0000         0       
+ 19750    7     T_RM_LDO3_CD                                                -1       0.0000 CD      15.0000 CD         30.0000 CD     0.0000         0       
+ 19800    7     T_RM_LDO4_CD                                                -1       0.0000 CD      17.0000 CD         30.0000 CD     0.0000         0       
+ 19850    7     T_RM_LDO8_CD                                                -1       0.0000 CD      19.0000 CD         30.0000 CD     0.0000         0       
+ 19900    7     T_RM_LDO9_CD                                                -1       0.0000 CD      22.0000 CD         31.0000 CD     0.0000         0       
+ 19950    7     T_RM_L9_BOUND                                               -1       -1.0000 CD     -1.0000 CD         -1.0000 CD     0.0000         0       
+<TRIM_LDO_ECM>
+ 20050    7     L1_WRD_50mA__CD                                             -1       N/A            1.8830 KCD         N/A            0.0000         0       
+ 20100    7     L1_WRD_200mA__CD                                            -1       N/A            7.1640 KCD         N/A            0.0000         0       
+ 20150    7     L1_ECM_OFFSET                                               -1       N/A            1.7480 KCD         N/A            0.0000         0       
+ 20200    7     L1_ECM_Mtrim                                                -1       N/A            -4.0000 CD         N/A            0.0000         0       
+ 20250    7     L1_ECM_SLOP                                                 -1       N/A            148.4181 mCD       N/A            0.0000         0       
+ 20300    7     L2_WRD_50mA__CD                                             -1       N/A            1.3670 KCD         N/A            0.0000         0       
+ 20350    7     L2_WRD_200mA__CD                                            -1       N/A            6.6860 KCD         N/A            0.0000         0       
+ 20400    7     L2_ECM_OFFSET                                               -1       N/A            1.2310 KCD         N/A            0.0000         0       
+ 20450    7     L2_ECM_Mtrim                                                -1       N/A            -5.0000 CD         N/A            0.0000         0       
+ 20500    7     L2_ECM_SLOP                                                 -1       N/A            147.4276 mCD       N/A            0.0000         0       
+ 20550    7     L3_WRD_50mA__CD                                             -1       N/A            1.8210 KCD         N/A            0.0000         0       
+ 20600    7     L3_WRD_200mA__CD                                            -1       N/A            7.3750 KCD         N/A            0.0000         0       
+ 20650    7     L3_ECM_OFFSET                                               -1       N/A            1.6790 KCD         N/A            0.0000         0       
+ 20700    7     L3_ECM_Mtrim                                                -1       N/A            -12.0000 CD        N/A            0.0000         0       
+ 20750    7     L3_ECM_SLOP                                                 -1       N/A            140.4944 mCD       N/A            0.0000         0       
+ 20800    7     L4_WRD_50mA__CD                                             -1       N/A            2.2080 KCD         N/A            0.0000         0       
+ 20850    7     L4_WRD_200mA__CD                                            -1       N/A            20.6020 KCD        N/A            0.0000         0       
+ 20900    7     L4_ECM_OFFSET                                               -1       N/A            1.7360 KCD         N/A            0.0000         0       
+ 20950    7     L4_ECM_Mtrim                                                -1       N/A            17.0000 CD         N/A            0.0000         0       
+ 21000    7     L4_ECM_SLOP                                                 -1       N/A            42.3101 mCD        N/A            0.0000         0       
+ 21050    7     L5_WRD_50mA__CD                                             -1       N/A            1.6720 KCD         N/A            0.0000         0       
+ 21100    7     L5_WRD_200mA__CD                                            -1       N/A            10.6930 KCD        N/A            0.0000         0       
+ 21150    7     L5_ECM_OFFSET                                               -1       N/A            1.4410 KCD         N/A            0.0000         0       
+ 21200    7     L5_ECM_Mtrim                                                -1       N/A            -4.0000 CD         N/A            0.0000         0       
+ 21250    7     L5_ECM_SLOP                                                 -1       N/A            86.5691 mCD        N/A            0.0000         0       
+ 21300    7     L6_WRD_50mA__CD                                             -1       N/A            2.3360 KCD         N/A            0.0000         0       
+ 21350    7     L6_WRD_200mA__CD                                            -1       N/A            11.1790 KCD        N/A            0.0000         0       
+ 21400    7     L6_ECM_OFFSET                                               -1       N/A            2.1090 KCD         N/A            0.0000         0       
+ 21450    7     L6_ECM_Mtrim                                                -1       N/A            -1.0000 CD         N/A            0.0000         0       
+ 21500    7     L6_ECM_SLOP                                                 -1       N/A            88.3023 mCD        N/A            0.0000         0       
+ 21550    7     L8_WRD_50mA__CD                                             -1       N/A            1.5810 KCD         N/A            0.0000         0       
+ 21600    7     L8_WRD_200mA__CD                                            -1       N/A            2.7080 KCD         N/A            0.0000         0       
+ 21650    7     L8_ECM_OFFSET                                               -1       N/A            1.5520 KCD         N/A            0.0000         0       
+ 21700    7     L8_ECM_Mtrim                                                -1       N/A            542.0000 CD        N/A            0.0000         0       
+ 21750    7     L8_ECM_SLOP                                                 -1       N/A            689.2147 mCD       N/A            0.0000         0       
+ 21800    7     L9_WRD_50mA__CD                                             -1       N/A            1.5680 KCD         N/A            0.0000         0       
+ 21850    7     L9_WRD_200mA__CD                                            -1       N/A            3.4730 KCD         N/A            0.0000         0       
+ 21900    7     L9_ECM_OFFSET                                               -1       N/A            1.5190 KCD         N/A            0.0000         0       
+ 21950    7     L9_ECM_Mtrim                                                -1       N/A            258.0000 CD        N/A            0.0000         0       
+ 22000    7     L9_ECM_SLOP                                                 -1       N/A            407.9213 mCD       N/A            0.0000         0       
+ 22050    7     EXT_WRD_250uA_EXT_ECM                                       -1       N/A            10.7940 KCD        N/A            0.0000         0       
+ 22100    7     EXT_WRD_750uA_EXT_ECM                                       -1       N/A            29.3430 KCD        N/A            0.0000         0       
+ 22150    7     EXT_ECM_OFFSET                                              -1       N/A            1.5200 KCD         N/A            0.0000         0       
+ 22200    7     EXT_ECM_Mtrim                                               -1       N/A            7.0000 CD          N/A            0.0000         0       
+ 22250    7     EXT_ECM_SLOP                                                -1       N/A            107.8470 nCD       N/A            0.0000         0       
+ 22300    7     L1_1_Y0                                                     -1       N/A            6.0000 CD          N/A            0.0000         0       
+ 22350    7     L1_0_Y0                                                     -1       N/A            212.0000 CD        N/A            0.0000         0       
+ 22400    7     L1_1_MT                                                     -1       N/A            128.0000 CD        N/A            0.0000         0       
+ 22450    7     L1_0_MT                                                     -1       N/A            4.0000 CD          N/A            0.0000         0       
+ 22500    7     L2_1_Y0                                                     -1       N/A            4.0000 CD          N/A            0.0000         0       
+ 22550    7     L2_0_Y0                                                     -1       N/A            207.0000 CD        N/A            0.0000         0       
+ 22600    7     L2_1_MT                                                     -1       N/A            128.0000 CD        N/A            0.0000         0       
+ 22650    7     L2_0_MT                                                     -1       N/A            5.0000 CD          N/A            0.0000         0       
+ 22700    7     L3_1_Y0                                                     -1       N/A            6.0000 CD          N/A            0.0000         0       
+ 22750    7     L3_0_Y0                                                     -1       N/A            143.0000 CD        N/A            0.0000         0       
+ 22800    7     L3_1_MT                                                     -1       N/A            128.0000 CD        N/A            0.0000         0       
+ 22850    7     L3_0_MT                                                     -1       N/A            12.0000 CD         N/A            0.0000         0       
+ 22900    7     L4_1_Y0                                                     -1       N/A            6.0000 CD          N/A            0.0000         0       
+ 22950    7     L4_0_Y0                                                     -1       N/A            200.0000 CD        N/A            0.0000         0       
+ 23000    7     L4_1_MT                                                     -1       N/A            0.0000 CD          N/A            0.0000         0       
+ 23050    7     L4_0_MT                                                     -1       N/A            17.0000 CD         N/A            0.0000         0       
+ 23100    7     L5_1_Y0                                                     -1       N/A            5.0000 CD          N/A            0.0000         0       
+ 23150    7     L5_0_Y0                                                     -1       N/A            161.0000 CD        N/A            0.0000         0       
+ 23200    7     L5_1_MT                                                     -1       N/A            128.0000 CD        N/A            0.0000         0       
+ 23250    7     L5_0_MT                                                     -1       N/A            4.0000 CD          N/A            0.0000         0       
+ 23300    7     L6_1_Y0                                                     -1       N/A            8.0000 CD          N/A            0.0000         0       
+ 23350    7     L6_0_Y0                                                     -1       N/A            61.0000 CD         N/A            0.0000         0       
+ 23400    7     L6_1_MT                                                     -1       N/A            128.0000 CD        N/A            0.0000         0       
+ 23450    7     L6_0_MT                                                     -1       N/A            1.0000 CD          N/A            0.0000         0       
+ 23500    7     L8_1_Y0                                                     -1       N/A            6.0000 CD          N/A            0.0000         0       
+ 23550    7     L8_0_Y0                                                     -1       N/A            16.0000 CD         N/A            0.0000         0       
+ 23600    7     L8_1_MT                                                     -1       N/A            2.0000 CD          N/A            0.0000         0       
+ 23650    7     L8_0_MT                                                     -1       N/A            30.0000 CD         N/A            0.0000         0       
+ 23700    7     L9_1_Y0                                                     -1       N/A            5.0000 CD          N/A            0.0000         0       
+ 23750    7     L9_0_Y0                                                     -1       N/A            239.0000 CD        N/A            0.0000         0       
+ 23800    7     L9_1_MT                                                     -1       N/A            1.0000 CD          N/A            0.0000         0       
+ 23850    7     L9_0_MT                                                     -1       N/A            2.0000 CD          N/A            0.0000         0       
+ 23900    7     EXT_ECM_1_Y0                                                -1       N/A            5.0000 CD          N/A            0.0000         0       
+ 23950    7     EXT_ECM_0_Y0                                                -1       N/A            240.0000 CD        N/A            0.0000         0       
+ 24000    7     EXT_ECM_1_MT                                                -1       N/A            0.0000 CD          N/A            0.0000         0       
+ 24050    7     EXT_ECM_0_MT                                                -1       N/A            7.0000 CD          N/A            0.0000         0       
+ 24100    7     L9_RES_WLP                                                  -1       0.0000 Ohms    353.9721 mOhms     1.0000 Ohms    0.0000         0       
+<TRIM_TALARM>
+ 24200    7     T_VTEMP_VAL                                                 -1       -127.0000 CD   16.0000 CD         127.0000 CD    0.0000         0       
+ 24250    7     T_VTEMP_REF_VAL                                             -1       -127.0000 CD   1.0000 CD          127.0000 CD    0.0000         0       
+ 24300    7     T_VTEMP_BUF_VAL                                             -1       -127.0000 CD   16.0000 CD         127.0000 CD    0.0000         0       
+<TRIM_LPDDR>
+ 24400    7     T_VREF1_TARGET                                              -1       300.0000 mV    597.6571 mV        800.0000 mV    0.0000 m       0       
+ 24450    7     T_VREF1_L2                                                  -1       1.1000 V       1.1953 V           1.3000 V       0.0000         0       
+ 24500    7     T_VREF1_CD                                                  -1       0.0000 CD      8.0000 CD          15.0000 CD     0.0000         0       
+ 24550    7     T_VREF1_V                                                   -1       500.0000 mV    598.1013 mV        700.0000 mV    0.0000 m       0       
+<TRIM_VADC>
+ 24650    7     T_VADC_VREF                                                 -1       1.7000 V       1.8803 V           2.1000 V       0.0000         0       
+ 24700    7     T_VADC_30K_CD                                               -1       0.0000 CD      36.0000 CD         127.0000 CD    0.0000         0       
+ 24750    7     T_VADC_30K_V                                                -1       0.0000 V       433.5141 mV        1.0000 V       0.0000         0       
+ 24800    7     T_VADC_30K_R                                                -1       29.7000 KOhms  29.9649 KOhms      30.3000 KOhms  0.0000 K       0       
+ 24850    7     T_VADC_100K_CD                                              -1       0.0000 CD      32.0000 CD         127.0000 CD    0.0000         0       
+ 24900    7     T_VADC_100K_V                                               -1       0.0000 V       940.6975 mV        1.5000 V       0.0000         0       
+ 24950    7     T_VADC_100K_R                                               -1       99.5000 KOhms  100.1216 KOhms     100.7000 KOhms 0.0000 K       0       
+ 25000    7     T_VADC_400K_CD                                              -1       0.0000 CD      32.0000 CD         127.0000 CD    0.0000         0       
+ 25050    7     T_VADC_400K_V                                               -1       0.0000 V       1.5053 V           2.0000 V       0.0000         0       
+ 25100    7     T_VADC_400K_R                                               -1       398.0000 KOhms 401.4706 KOhms     402.0000 KOhms 0.0000 K       0       
+ 25150    7     T_ADC_DIV3_CD                                               -1       0.0000 CD      63.0000 CD         127.0000 CD    0.0000         0       
+ 25200    7     VADC_DIV3_V                                                 -1       3.5000 V       3.6001 V           3.8000 V       0.0000         0       
+<MBG_WHAT>
+ 25260    7     T__MBG_1P25__V__FINAL                                       -1       1.2456 V       1.2497 V           1.2544 V       0.0000         0       
+ 25265    7     T__MBG_0P625__V__FINAL                                      -1       621.8750 mV    625.2073 mV        628.1250 mV    0.0000         0       
+ 25270    7     T__MBG_0P3125__V__FINAL                                     -1       310.9375 mV    312.4472 mV        314.0625 mV    0.0000         0       
+ 25275    7     T__MBG_1P25__CD__FINAL                                      -1       0.0000 CD      50.0000 CD         255.0000 CD    0.0000         0       
+ 25280    7     T__MBG_0P625__CD__FINAL                                     -1       0.0000 CD      1.0000 CD          31.0000 CD     0.0000         0       
+ 25285    7     T__MBG_0P3125__CD__FINAL                                    -1       0.0000 CD      7.0000 CD          31.0000 CD     0.0000         0       
+ 25290    7     T__MBG_125_ADJ                                              -1       -127.0000 CD   -1.0000 CD         127.0000 CD    0.0000         0       
+ 25295    7     T__MBG_625_ADJ                                              -1       -15.0000 CD    0.0000 CD          15.0000 CD     0.0000         0       
+ 25300    7     T__MBG_3125_ADJ                                             -1       -15.0000 CD    0.0000 CD          15.0000 CD     0.0000         0       
+<HF_ACCURACY_ADJUST>
+ 25350    7     S1_PWM_VDC                                                  -1       885.9200 mV    901.1171 mV        922.0800 mV    0.0000         0       
+ 25360    7     S2_PWM_VDC                                                  -1       1.2779 V       1.3048 V           1.3301 V       0.0000         0       
+ 25370    7     S3_PWM_VDC                                                  -1       1.0819 V       1.1010 V           1.1261 V       0.0000         0       
+ 25380    7     S4_PWM_VDC                                                  -1       1.8581 V       1.8960 V           1.9339 V       0.0000         0       
+ 25390    7     S5_PWM_VDC                                                  -1       885.9200 mV    907.1791 mV        922.0800 mV    0.0000         0       
+ 25400    7     S1_PFM_VDC                                                  -1       890.8200 mV    933.7648 mV        972.0000 mV    0.0000         0       
+ 25410    7     S2_PFM_VDC                                                  -1       1.2828 V       1.3347 V           1.3744 V       0.0000         0       
+ 25420    7     S3_PFM_VDC                                                  -1       1.0868 V       1.1446 V           1.1700 V       0.0000         0       
+ 25430    7     S4_PFM_VDC                                                  -1       1.8620 V       1.9420 V           1.9770 V       0.0000         0       
+ 25440    7     S5_PFM_VDC                                                  -1       890.8200 mV    947.6701 mV        974.0000 mV    0.0000         0       
+ 25450    7     PWM_S1_CD                                                   -1       1.0000 CD      7.0000 CD          30.0000 CD     0.0000         0       
+ 25460    7     PWM_S2_CD                                                   -1       1.0000 CD      7.0000 CD          30.0000 CD     0.0000         0       
+ 25470    7     PWM_S3_CD                                                   -1       1.0000 CD      7.0000 CD          30.0000 CD     0.0000         0       
+ 25480    7     PWM_S4_CD                                                   -1       1.0000 CD      7.0000 CD          30.0000 CD     0.0000         0       
+ 25490    7     PWM_S5_CD                                                   -1       1.0000 CD      8.0000 CD          30.0000 CD     0.0000         0       
+ 25500    7     PWM_S1_Delta                                                -1       -15.0000 CD    0.0000 CD          15.0000 CD     0.0000         0       
+ 25510    7     PWM_S2_Delta                                                -1       -15.0000 CD    0.0000 CD          15.0000 CD     0.0000         0       
+ 25520    7     PWM_S3_Delta                                                -1       -15.0000 CD    0.0000 CD          15.0000 CD     0.0000         0       
+ 25530    7     PWM_S4_Delta                                                -1       -15.0000 CD    0.0000 CD          15.0000 CD     0.0000         0       
+ 25540    7     PWM_S5_Delta                                                -1       -15.0000 CD    0.0000 CD          15.0000 CD     0.0000         0       
+ 25550    7     PFM_S1_CD                                                   -1       1.0000 CD      10.0000 CD         30.0000 CD     0.0000         0       
+ 25560    7     PFM_S2_CD                                                   -1       1.0000 CD      9.0000 CD          30.0000 CD     0.0000         0       
+ 25570    7     PFM_S3_CD                                                   -1       1.0000 CD      10.0000 CD         30.0000 CD     0.0000         0       
+ 25580    7     PFM_S4_CD                                                   -1       1.0000 CD      8.0000 CD          30.0000 CD     0.0000         0       
+ 25590    7     PFM_S5_CD                                                   -1       1.0000 CD      9.0000 CD          30.0000 CD     0.0000         0       
+ 25600    7     S1_AUTO_VDC                                                 -1       890.8200 mV    927.6531 mV        972.0000 mV    0.0000         0       
+ 25610    7     S2_AUTO_VDC                                                 -1       1.2828 V       1.3316 V           1.3744 V       0.0000         0       
+ 25620    7     S3_AUTO_VDC                                                 -1       1.0868 V       1.1381 V           1.1700 V       0.0000         0       
+ 25630    7     S4_AUTO_VDC                                                 -1       1.8620 V       1.9486 V           1.9770 V       0.0000         0       
+ 25640    7     S5_AUTO_VDC                                                 -1       890.8200 mV    946.1439 mV        972.0000 mV    0.0000         0       
+ 25650    7     S1_RM_VDC                                                   -1       890.8200 mV    931.3794 mV        972.0000 mV    0.0000         0       
+ 25660    7     S2_RM_VDC                                                   -1       1.2828 V       1.3353 V           1.3744 V       0.0000         0       
+ 25670    7     S3_RM_VDC                                                   -1       1.0868 V       1.1363 V           1.1700 V       0.0000         0       
+ 25680    7     S4_RM_VDC                                                   -1       1.8620 V       1.9589 V           1.9770 V       0.0000         0       
+ 25690    7     S5_RM_VDC                                                   -1       890.8200 mV    945.9103 mV        980.0000 mV    0.0000         0       
+ 25700    7     F_VDIP_CD_S1                                                -1       N/A            17.0000            N/A            0.0000         0       
+ 25710    7     F_VDIP_CD_S2                                                -1       N/A            17.0000            N/A            0.0000         0       
+ 25720    7     F_VDIP_CD_S3                                                -1       N/A            18.0000            N/A            0.0000         0       
+ 25730    7     F_VDIP_CD_S4                                                -1       N/A            18.0000            N/A            0.0000         0       
+ 25740    7     F_VDIP_CD_S5                                                -1       N/A            18.0000            N/A            0.0000         0       
+ 25750    7     VDIP_ADJ_S1                                                 -1       N/A            0.0000             N/A            0.0000         0       
+ 25760    7     VDIP_ADJ_S2                                                 -1       N/A            1.0000             N/A            0.0000         0       
+ 25770    7     VDIP_ADJ_S3                                                 -1       N/A            1.0000             N/A            0.0000         0       
+ 25780    7     VDIP_ADJ_S4                                                 -1       N/A            1.0000             N/A            0.0000         0       
+ 25790    7     VDIP_ADJ_S5                                                 -1       N/A            1.0000             N/A            0.0000         0       
+<TRIM_BURN>
+ 26400    7     T_BURN_ENABLE                                               -1       -1.0000        -1.0000            0.0000         0.0000         0       
+ 26450    7     TRIM_NUM_MSB                                                -1       0.0000 CD      0.0000 CD          256.0000 CD    0.0000         0       
+ 26500    7     TRIM_NUM_LSB                                                -1       0.0000 CD      85.0000 CD         256.0000 CD    0.0000         0       
+<TRIM_COMPARE>
+ 26550    7     T_CD_0                                                      -1       0.0000         7.0000             255.0000       0.0000         0       
+ 26551    7     T_CD_1                                                      -1       0.0000         8.0000             255.0000       0.0000         0       
+ 26552    7     T_CD_2                                                      -1       0.0000         50.0000            255.0000       0.0000         0       
+ 26553    7     T_CD_3                                                      -1       0.0000         4.0000             255.0000       0.0000         0       
+ 26554    7     T_CD_4                                                      -1       0.0000         1.0000             255.0000       0.0000         0       
+ 26555    7     T_CD_5                                                      -1       0.0000         7.0000             255.0000       0.0000         0       
+ 26556    7     T_CD_6                                                      -1       0.0000         6.0000             255.0000       0.0000         0       
+ 26557    7     T_CD_7                                                      -1       0.0000         0.0000             255.0000       0.0000         0       
+ 26558    7     T_CD_8                                                      -1       0.0000         13.0000            255.0000       0.0000         0       
+ 26559    7     T_CD_9                                                      -1       0.0000         0.0000             255.0000       0.0000         0       
+ 26560    7     T_CD_10                                                     -1       0.0000         13.0000            255.0000       0.0000         0       
+ 26561    7     T_CD_11                                                     -1       0.0000         5.0000             255.0000       0.0000         0       
+ 26562    7     T_CD_12                                                     -1       0.0000         12.0000            255.0000       0.0000         0       
+ 26563    7     T_CD_13                                                     -1       0.0000         0.0000             255.0000       0.0000         0       
+ 26564    7     T_CD_14                                                     -1       0.0000         0.0000             255.0000       0.0000         0       
+ 26565    7     T_CD_15                                                     -1       0.0000         0.0000             255.0000       0.0000         0       
+ 26566    7     T_CD_16                                                     -1       0.0000         36.0000            255.0000       0.0000         0       
+ 26567    7     T_CD_17                                                     -1       0.0000         32.0000            255.0000       0.0000         0       
+ 26568    7     T_CD_18                                                     -1       0.0000         33.0000            255.0000       0.0000         0       
+ 26569    7     T_CD_19                                                     -1       0.0000         63.0000            255.0000       0.0000         0       
+ 26570    7     T_CD_20                                                     -1       0.0000         8.0000             255.0000       0.0000         0       
+ 26571    7     T_CD_21                                                     -1       0.0000         7.0000             255.0000       0.0000         0       
+ 26572    7     T_CD_22                                                     -1       0.0000         8.0000             255.0000       0.0000         0       
+ 26573    7     T_CD_23                                                     -1       0.0000         10.0000            255.0000       0.0000         0       
+ 26574    7     T_CD_24                                                     -1       0.0000         30.0000            255.0000       0.0000         0       
+ 26575    7     T_CD_25                                                     -1       0.0000         15.0000            255.0000       0.0000         0       
+ 26576    7     T_CD_26                                                     -1       0.0000         6.0000             255.0000       0.0000         0       
+ 26577    7     T_CD_27                                                     -1       0.0000         7.0000             255.0000       0.0000         0       
+ 26578    7     T_CD_28                                                     -1       0.0000         10.0000            255.0000       0.0000         0       
+ 26579    7     T_CD_29                                                     -1       0.0000         17.0000            255.0000       0.0000         0       
+ 26580    7     T_CD_30                                                     -1       0.0000         13.0000            255.0000       0.0000         0       
+ 26581    7     T_CD_31                                                     -1       0.0000         9.0000             255.0000       0.0000         0       
+ 26582    7     T_CD_32                                                     -1       0.0000         8.0000             255.0000       0.0000         0       
+ 26583    7     T_CD_33                                                     -1       1.0000         9.0000             14.0000        0.0000         0       
+ 26584    7     T_CD_34                                                     -1       0.0000         9.0000             255.0000       0.0000         0       
+ 26585    7     T_CD_35                                                     -1       0.0000         7.0000             255.0000       0.0000         0       
+ 26586    7     T_CD_36                                                     -1       0.0000         9.0000             255.0000       0.0000         0       
+ 26587    7     T_CD_37                                                     -1       0.0000         17.0000            255.0000       0.0000         0       
+ 26588    7     T_CD_38                                                     -1       0.0000         13.0000            255.0000       0.0000         0       
+ 26589    7     T_CD_39                                                     -1       0.0000         7.0000             255.0000       0.0000         0       
+ 26590    7     T_CD_40                                                     -1       0.0000         8.0000             255.0000       0.0000         0       
+ 26591    7     T_CD_41                                                     -1       1.0000         7.0000             14.0000        0.0000         0       
+ 26592    7     T_CD_42                                                     -1       0.0000         9.0000             255.0000       0.0000         0       
+ 26593    7     T_CD_43                                                     -1       0.0000         7.0000             255.0000       0.0000         0       
+ 26594    7     T_CD_44                                                     -1       0.0000         9.0000             255.0000       0.0000         0       
+ 26595    7     T_CD_45                                                     -1       0.0000         17.0000            255.0000       0.0000         0       
+ 26596    7     T_CD_46                                                     -1       0.0000         14.0000            255.0000       0.0000         0       
+ 26597    7     T_CD_47                                                     -1       0.0000         9.0000             255.0000       0.0000         0       
+ 26598    7     T_CD_48                                                     -1       0.0000         8.0000             255.0000       0.0000         0       
+ 26599    7     T_CD_49                                                     -1       1.0000         6.0000             15.0000        0.0000         0       
+ 26600    7     T_CD_50                                                     -1       0.0000         7.0000             255.0000       0.0000         0       
+ 26601    7     T_CD_51                                                     -1       0.0000         7.0000             255.0000       0.0000         0       
+ 26602    7     T_CD_52                                                     -1       0.0000         9.0000             255.0000       0.0000         0       
+ 26603    7     T_CD_53                                                     -1       0.0000         18.0000            255.0000       0.0000         0       
+ 26604    7     T_CD_54                                                     -1       0.0000         14.0000            255.0000       0.0000         0       
+ 26605    7     T_CD_55                                                     -1       0.0000         7.0000             255.0000       0.0000         0       
+ 26606    7     T_CD_56                                                     -1       0.0000         7.0000             255.0000       0.0000         0       
+ 26607    7     T_CD_57                                                     -1       1.0000         8.0000             14.0000        0.0000         0       
+ 26608    7     T_CD_58                                                     -1       0.0000         9.0000             255.0000       0.0000         0       
+ 26609    7     T_CD_59                                                     -1       0.0000         8.0000             255.0000       0.0000         0       
+ 26610    7     T_CD_60                                                     -1       0.0000         9.0000             255.0000       0.0000         0       
+ 26611    7     T_CD_61                                                     -1       0.0000         18.0000            255.0000       0.0000         0       
+ 26612    7     T_CD_62                                                     -1       0.0000         14.0000            255.0000       0.0000         0       
+ 26613    7     T_CD_63                                                     -1       0.0000         10.0000            255.0000       0.0000         0       
+ 26614    7     T_CD_64                                                     -1       0.0000         9.0000             255.0000       0.0000         0       
+ 26615    7     T_CD_65                                                     -1       1.0000         8.0000             14.0000        0.0000         0       
+ 26616    7     T_CD_66                                                     -1       0.0000         16.0000            255.0000       0.0000         0       
+ 26617    7     T_CD_67                                                     -1       0.0000         18.0000            255.0000       0.0000         0       
+ 26618    7     T_CD_68                                                     -1       0.0000         17.0000            255.0000       0.0000         0       
+ 26619    7     T_CD_69                                                     -1       0.0000         18.0000            255.0000       0.0000         0       
+ 26620    7     T_CD_70                                                     -1       0.0000         19.0000            255.0000       0.0000         0       
+ 26621    7     T_CD_71                                                     -1       0.0000         15.0000            255.0000       0.0000         0       
+ 26622    7     T_CD_72                                                     -1       0.0000         18.0000            255.0000       0.0000         0       
+ 26623    7     T_CD_73                                                     -1       0.0000         17.0000            255.0000       0.0000         0       
+ 26624    7     T_CD_74                                                     -1       0.0000         19.0000            255.0000       0.0000         0       
+ 26625    7     T_CD_75                                                     -1       0.0000         11.0000            255.0000       0.0000         0       
+ 26626    7     T_CD_76                                                     -1       0.0000         5.0000             255.0000       0.0000         0       
+ 26627    7     T_CD_77                                                     -1       0.0000         16.0000            255.0000       0.0000         0       
+ 26628    7     T_CD_78                                                     -1       0.0000         19.0000            255.0000       0.0000         0       
+ 26629    7     T_CD_79                                                     -1       0.0000         15.0000            255.0000       0.0000         0       
+ 26630    7     T_CD_80                                                     -1       0.0000         23.0000            255.0000       0.0000         0       
+ 26631    7     T_CD_81                                                     -1       0.0000         15.0000            255.0000       0.0000         0       
+ 26632    7     T_CD_82                                                     -1       0.0000         9.0000             255.0000       0.0000         0       
+ 26633    7     T_CD_83                                                     -1       0.0000         15.0000            255.0000       0.0000         0       
+ 26634    7     T_CD_84                                                     -1       0.0000         17.0000            255.0000       0.0000         0       
+ 26635    7     T_ECM_CD_S1_0                                               -1       1.0000         81.0000            255.0000       0.0000         0       
+ 26636    7     T_ECM_CD_S1_1                                               -1       1.0000         255.0000           255.0000       0.0000         0       
+ 26637    7     T_ECM_CD_S1_2                                               -1       1.0000         255.0000           255.0000       0.0000         0       
+ 26638    7     T_ECM_CD_S1_3                                               -1       1.0000         255.0000           255.0000       0.0000         0       
+ 26639    7     T_ECM_CD_S2_0                                               -1       1.0000         90.0000            255.0000       0.0000         0       
+ 26640    7     T_ECM_CD_S2_1                                               -1       0.0000         0.0000             255.0000       0.0000         0       
+ 26641    7     T_ECM_CD_S2_2                                               -1       1.0000         255.0000           255.0000       0.0000         0       
+ 26642    7     T_ECM_CD_S2_3                                               -1       1.0000         255.0000           255.0000       0.0000         0       
+ 26643    7     T_ECM_CD_S3_0                                               -1       1.0000         92.0000            255.0000       0.0000         0       
+ 26644    7     T_ECM_CD_S3_1                                               -1       0.0000         0.0000             255.0000       0.0000         0       
+ 26645    7     T_ECM_CD_S3_2                                               -1       1.0000         255.0000           255.0000       0.0000         0       
+ 26646    7     T_ECM_CD_S3_3                                               -1       1.0000         255.0000           255.0000       0.0000         0       
+ 26647    7     T_ECM_CD_S4_0                                               -1       1.0000         71.0000            255.0000       0.0000         0       
+ 26648    7     T_ECM_CD_S4_1                                               -1       0.0000         0.0000             255.0000       0.0000         0       
+ 26649    7     T_ECM_CD_S4_2                                               -1       1.0000         255.0000           255.0000       0.0000         0       
+ 26650    7     T_ECM_CD_S4_3                                               -1       1.0000         255.0000           255.0000       0.0000         0       
+ 26651    7     T_ECM_CD_S5_0                                               -1       1.0000         87.0000            255.0000       0.0000         0       
+ 26652    7     T_ECM_CD_S5_1                                               -1       0.0000         0.0000             255.0000       0.0000         0       
+ 26653    7     T_ECM_CD_S5_2                                               -1       1.0000         255.0000           255.0000       0.0000         0       
+ 26654    7     T_ECM_CD_S5_3                                               -1       1.0000         255.0000           255.0000       0.0000         0       
+ 26655    7     T_ECM_CD_L1_0                                               -1       0.0000         8.0000             255.0000       0.0000         0       
+ 26656    7     T_ECM_CD_L1_1                                               -1       0.0000         128.0000           255.0000       0.0000         0       
+ 26657    7     T_ECM_CD_L1_2                                               -1       0.0000         204.0000           255.0000       0.0000         0       
+ 26658    7     T_ECM_CD_L1_3                                               -1       0.0000         6.0000             255.0000       0.0000         0       
+ 26659    7     T_ECM_CD_L2_0                                               -1       0.0000         9.0000             255.0000       0.0000         0       
+ 26660    7     T_ECM_CD_L2_1                                               -1       0.0000         128.0000           255.0000       0.0000         0       
+ 26661    7     T_ECM_CD_L2_2                                               -1       0.0000         209.0000           255.0000       0.0000         0       
+ 26662    7     T_ECM_CD_L2_3                                               -1       0.0000         4.0000             255.0000       0.0000         0       
+ 26663    7     T_ECM_CD_L3_0                                               -1       0.0000         18.0000            255.0000       0.0000         0       
+ 26664    7     T_ECM_CD_L3_1                                               -1       0.0000         128.0000           255.0000       0.0000         0       
+ 26665    7     T_ECM_CD_L3_2                                               -1       0.0000         130.0000           255.0000       0.0000         0       
+ 26666    7     T_ECM_CD_L3_3                                               -1       0.0000         6.0000             255.0000       0.0000         0       
+ 26667    7     T_ECM_CD_L4_0                                               -1       0.0000         9.0000             255.0000       0.0000         0       
+ 26668    7     T_ECM_CD_L4_1                                               -1       0.0000         128.0000           255.0000       0.0000         0       
+ 26669    7     T_ECM_CD_L4_2                                               -1       0.0000         123.0000           255.0000       0.0000         0       
+ 26670    7     T_ECM_CD_L4_3                                               -1       0.0000         6.0000             255.0000       0.0000         0       
+ 26671    7     T_ECM_CD_L5_0                                               -1       0.0000         5.0000             255.0000       0.0000         0       
+ 26672    7     T_ECM_CD_L5_1                                               -1       0.0000         128.0000           255.0000       0.0000         0       
+ 26673    7     T_ECM_CD_L5_2                                               -1       0.0000         140.0000           255.0000       0.0000         0       
+ 26674    7     T_ECM_CD_L5_3                                               -1       0.0000         5.0000             255.0000       0.0000         0       
+ 26675    7     T_ECM_CD_L6_0                                               -1       0.0000         5.0000             255.0000       0.0000         0       
+ 26676    7     T_ECM_CD_L6_1                                               -1       0.0000         128.0000           255.0000       0.0000         0       
+ 26677    7     T_ECM_CD_L6_2                                               -1       0.0000         49.0000            255.0000       0.0000         0       
+ 26678    7     T_ECM_CD_L6_3                                               -1       0.0000         8.0000             255.0000       0.0000         0       
+ 26679    7     T_ECM_CD_L8_0                                               -1       0.0000         2.0000             255.0000       0.0000         0       
+ 26680    7     T_ECM_CD_L8_1                                               -1       0.0000         128.0000           255.0000       0.0000         0       
+ 26681    7     T_ECM_CD_L8_2                                               -1       0.0000         169.0000           255.0000       0.0000         0       
+ 26682    7     T_ECM_CD_L8_3                                               -1       0.0000         5.0000             255.0000       0.0000         0       
+ 26683    7     T_ECM_CD_L9_0                                               -1       0.0000         3.0000             255.0000       0.0000         0       
+ 26684    7     T_ECM_CD_L9_1                                               -1       0.0000         128.0000           255.0000       0.0000         0       
+ 26685    7     T_ECM_CD_L9_2                                               -1       0.0000         160.0000           255.0000       0.0000         0       
+ 26686    7     T_ECM_CD_L9_3                                               -1       0.0000         5.0000             255.0000       0.0000         0       
+ 26687    7     T_EXT_ECM_CD_0                                              -1       0.0000         4.0000             255.0000       0.0000         0       
+ 26688    7     T_EXT_ECM_CD_1                                              -1       0.0000         0.0000             255.0000       0.0000         0       
+ 26689    7     T_EXT_ECM_CD_2                                              -1       0.0000         62.0000            255.0000       0.0000         0       
+ 26690    7     T_EXT_ECM_CD_3                                              -1       0.0000         4.0000             255.0000       0.0000         0       
+ 26691    7     T_ECM_REV_CD_0                                              -1       0.0000         4.0000             255.0000       0.0000         0       
+ 26692    7     T_ECM_REV_CD_1                                              -1       0.0000         255.0000           255.0000       0.0000         0       
+ 26693    7     T_ECM_REV_CD_2                                              -1       0.0000         255.0000           255.0000       0.0000         0       
+ 26694    7     T_ECM_REV_CD_3                                              -1       0.0000         255.0000           255.0000       0.0000         0       
+<POST_TRIM>
+ 27000    7     LPM_L1_PT                                                   -1       1.1640 V       1.1967 V           1.2360 V       0.0000         0       
+ 27002    7     LPM_L2_PT                                                   -1       1.1640 V       1.1962 V           1.2360 V       0.0000         0       
+ 27004    7     LPM_L3_PT                                                   -1       970.0000 mV    1.0007 V           1.0300 V       0.0000         0       
+ 27006    7     LPM_L4_PT                                                   -1       900.1600 mV    928.9063 mV        955.8400 mV    0.0000         0       
+ 27008    7     LPM_L5_PT                                                   -1       1.7460 V       1.8077 V           1.8540 V       0.0000         0       
+ 27010    7     LPM_L6_PT                                                   -1       1.7460 V       1.8002 V           1.8540 V       0.0000         0       
+ 27012    7     LPM_L7_PT                                                   -1       1.7460 V       1.7964 V           1.8540 V       0.0000         0       
+ 27014    7     LPM_L8_PT                                                   -1       970.0000 mV    997.5730 mV        1.0300 V       0.0000         0       
+ 27016    7     LPM_L9_PT                                                   -1       923.4400 mV    955.2757 mV        980.5600 mV    0.0000         0       
+ 27018    7     LPM_L10_PT                                                  -1       2.9954 V       3.0869 V           3.1806 V       0.0000         0       
+ 27020    7     LPM_L11_PT                                                  -1       1.7460 V       1.8007 V           1.8540 V       0.0000         0       
+ 27022    7     LPM_L12_PT                                                  -1       2.6229 V       2.7028 V           2.7851 V       0.0000         0       
+ 27024    7     LPM_L13_PT                                                  -1       2.6229 V       2.7049 V           2.7851 V       0.0000         0       
+ 27026    7     RF_CLK1_F_PT                                                -1       37.4000 MHz    38.3995 MHz        39.4000 MHz    0.0000 M       0       
+ 27028    7     RF_CLK2_F_PT                                                -1       37.4000 MHz    38.3971 MHz        39.4000 MHz    0.0000 M       0       
+ 27030    7     RF_CLK3_F_PT                                                -1       37.4000 MHz    38.4051 MHz        39.4000 MHz    0.0000 M       0       
+ 27032    7     LN_BBCLK_F_PT                                               -1       18.2000 MHz    19.2015 MHz        20.2000 MHz    0.0000 M       0       
+ 27034    7     SLEEP_CLK_F_PT                                              -1       27.0000 KHz    32.7611 KHz        35.0000 KHz    0.0000 K       0       
+ 27036    7     RF_CLK1_D_PT                                                -1       45.0000 %      50.4674 %          55.0000 %      0.0000 %       0       
+ 27038    7     RF_CLK2_D_PT                                                -1       45.0000 %      50.1441 %          55.0000 %      0.0000 %       0       
+ 27040    7     RF_CLK3_D_PT                                                -1       45.0000 %      50.1415 %          55.0000 %      0.0000 %       0       
+ 27042    7     LN_BBCLK_D_PT                                               -1       45.0000 %      48.9582 %          55.0000 %      0.0000 %       0       
+ 27044    7     VREG_XO_5mA_PT                                              -1       1.5200 V       1.6103 V           1.6800 V       0.0000         0       
+ 27046    7     VREG_RF_5mA_PT                                              -1       1.1400 V       1.2062 V           1.2600 V       0.0000         0       
+ 27048    7     ILK_PA_THERM1_0_PT                                          -1       -6.0000 uA     1.6964 uA          6.0000 uA      0.0000 u       0       
+ 27050    7     ILK_PA_THERM2_0_PT                                          -1       -6.0000 uA     -0.7039 uA         6.0000 uA      0.0000 u       0       
+ 27052    7     ILK_PA_THERM3_0_PT                                          -1       -6.0000 uA     -0.9952 uA         6.0000 uA      0.0000 u       0       
+ 27054    7     ILK_XO_THERM_0_PT                                           -1       -6.0000 uA     0.0000 uA          6.0000 uA      0.0000 u       0       
+ 27064    7     GPIO01_VOH_PT                                               -1       3.5000 V       3.5755 V           3.7000 V       0.0000         0       
+ 27066    7     GPIO02_VOH_PT                                               -1       1.7000 V       1.7858 V           1.9000 V       0.0000         0       
+ 27068    7     GPIO03_VOH_PT                                               -1       3.5000 V       3.5791 V           3.7000 V       0.0000         0       
+ 27070    7     GPIO04_VOH_PT                                               -1       1.7000 V       1.7854 V           1.9000 V       0.0000         0       
+ 27072    7     GPIO05_VOH_PT                                               -1       3.5000 V       3.5761 V           3.7000 V       0.0000         0       
+ 27074    7     GPIO06_VOH_PT                                               -1       1.7000 V       1.7891 V           1.9000 V       0.0000         0       
+ 27076    7     GPIO07_VOH_PT                                               -1       3.5000 V       3.5762 V           3.7000 V       0.0000         0       
+ 27078    7     GPIO08_VOH_PT                                               -1       1.7000 V       1.7881 V           1.9000 V       0.0000         0       
+ 27080    7     GPIO09_VOH_PT                                               -1       1.7000 V       1.7863 V           1.9000 V       0.0000         0       
+ 27082    7     GPIO10_VOH_PT                                               -1       1.7000 V       1.7923 V           1.9000 V       0.0000         0       
+ 27084    7     GPIO11_VOH_PT                                               -1       3.5000 V       3.5751 V           3.7000 V       0.0000         0       
+ 27086    7     GPIO12_VOH_PT                                               -1       3.5000 V       3.5803 V           3.7000 V       0.0000         0       
+ 27088    7     GPIO01_VOL_PT                                               -1       -1000.0000 mV  -17.8079 mV        100.0000 mV    0.0000 m       0       
+ 27090    7     GPIO02_VOL_PT                                               -1       -1000.0000 mV  -10.1809 mV        100.0000 mV    0.0000 m       0       
+ 27092    7     GPIO03_VOL_PT                                               -1       -1000.0000 mV  -15.7552 mV        100.0000 mV    0.0000 m       0       
+ 27094    7     GPIO04_VOL_PT                                               -1       -1000.0000 mV  -8.1895 mV         100.0000 mV    0.0000 m       0       
+ 27096    7     GPIO05_VOL_PT                                               -1       -1000.0000 mV  -14.4666 mV        100.0000 mV    0.0000 m       0       
+ 27098    7     GPIO06_VOL_PT                                               -1       -1000.0000 mV  -10.8237 mV        100.0000 mV    0.0000 m       0       
+ 27100    7     GPIO07_VOL_PT                                               -1       -1000.0000 mV  -15.0860 mV        100.0000 mV    0.0000 m       0       
+ 27102    7     GPIO08_VOL_PT                                               -1       -1000.0000 mV  -9.0650 mV         100.0000 mV    0.0000 m       0       
+ 27104    7     GPIO09_VOL_PT                                               -1       -1000.0000 mV  -11.5339 mV        100.0000 mV    0.0000 m       0       
+ 27106    7     GPIO10_VOL_PT                                               -1       -1000.0000 mV  -9.7364 mV         100.0000 mV    0.0000 m       0       
+ 27108    7     GPIO11_VOL_PT                                               -1       -1000.0000 mV  -15.9774 mV        100.0000 mV    0.0000 m       0       
+ 27110    7     GPIO12_VOL_PT                                               -1       -1000.0000 mV  -15.2262 mV        100.0000 mV    0.0000 m       0       
+ 27112    7     PON_RESET_N_VDC                                             -1       1.7000 V       1.7918 V           2.2000 V       0.0000         0       
+ 27114    7     RESIN_N_VDC                                                 -1       1.7000 V       1.7870 V           2.2000 V       0.0000         0       
+ 27116    7     KPDPWR_N_VDC                                                -1       1.7000 V       1.7586 V           2.2000 V       0.0000         0       
+<HF_AUTOMODE_CHECK>
+ 29480    7     S1_SITE_CHK                                                 -1       0.0000         0.0000             1.0000         0.0000         0       
+ 29482    7     S1_AUTOMODE_CHK                                             -1       1.0000         1.0000             1.0000         0.0000         0       
+ 29484    7     S3_SITE_CHK                                                 -1       0.0000         0.0000             1.0000         0.0000         0       
+ 29486    7     S3_AUTOMODE_CHK                                             -1       1.0000         1.0000             1.0000         0.0000         0       
+<IDD_SLEEP>
+ 29550    7     IDD_SLEEP                                                   -1       175.0000 uA    460.1644 uA        700.0000 uA    0.0000         0       
+ 29560    7     IDD_WAKE                                                    -1       2.0000 mA      3.9763 mA          6.0000 mA      0.0000         0       
+ 29600    7     PRE_SEQ_ST0                                                 -1       17.0000        17.0000            17.0000        0.0000         0       
+ 29650    7     PRE_SEQ_ST1                                                 -1       17.0000        17.0000            17.0000        0.0000         0       
+ 29700    7     POST_SEQ_ST0                                                -1       17.0000        17.0000            17.0000        0.0000         0       
+ 29750    7     POST_SEQ_ST1                                                -1       17.0000        17.0000            17.0000        0.0000         0       
+ 29800    7     IDD_SLEEP_L1                                                -1       1.1000 V       1.1976 V           1.3000 V       0.0000         0       
+ 29850    7     IDD_SLEEP_L2                                                -1       1.1000 V       1.1969 V           1.3000 V       0.0000         0       
+ 29900    7     IDD_SLEEP_L3                                                -1       970.0000 mV    1.0013 V           1.0300 V       0.0000         0       
+ 29950    7     IDD_SLEEP_L6                                                -1       1.7000 V       1.8013 V           1.9000 V       0.0000         0       
+ 30000    7     IDD_SLEEP_L7                                                -1       1.7000 V       1.7957 V           1.9000 V       0.0000         0       
+ 30100    7     IDD_SLEEP_L9                                                -1       400.0000 mV    507.4592 mV        700.0000 mV    0.0000         0       
+ 30150    7     IDD_SLEEP_L11                                               -1       1.7000 V       1.8000 V           1.9000 V       0.0000         0       
+ 30200    7     IDD_SLEEP_L12                                               -1       2.6000 V       2.7022 V           2.9000 V       0.0000         0       
+ 30250    7     IDD_SLEEP_L13                                               -1       1.7000 V       1.8002 V           1.9000 V       0.0000         0       
+ 30260    7     IDD_SLEEP_S2                                                -1       1.1000 V       1.2562 V           1.4000 V       0.0000         0       
+ 30270    7     IDD_SLEEP_S3                                                -1       850.0000 mV    1.0258 V           1.1000 V       0.0000         0       
+ 30280    7     IDD_SLEEP_S4                                                -1       1.7000 V       1.8754 V           2.0000 V       0.0000         0       
+ 30290    7     IDD_SLEEP_S5                                                -1       300.0000 mV    457.1058 mV        600.0000 mV    0.0000         0       
+ 30300    7     S1_IGND_PFM                                                 -1       1.0000 uA      279.2460 uA        700.0000 uA    0.0000 u       0       
+ 30302    7     S2_IGND_PFM                                                 -1       1.0000 uA      391.2355 uA        700.0000 uA    0.0000 u       0       
+ 30304    7     S3_IGND_PFM                                                 -1       1.0000 uA      377.1392 uA        700.0000 uA    0.0000 u       0       
+ 30306    7     S5_IGND_PFM                                                 -1       1.0000 uA      203.5957 uA        700.0000 uA    0.0000 u       0       
+ 30308    7     S1_IGND_PWM                                                 -1       200.0000 uA    925.4775 uA        1500.0000 uA   0.0000 u       0       
+ 30310    7     S2_IGND_PWM                                                 -1       200.0000 uA    970.5901 uA        1500.0000 uA   0.0000 u       0       
+ 30312    7     S3_IGND_PWM                                                 -1       200.0000 uA    912.5123 uA        1500.0000 uA   0.0000 u       0       
+ 30314    7     S5_IGND_PWM                                                 -1       200.0000 uA    820.6818 uA        1500.0000 uA   0.0000 u       0       
+<HF_PSKIP>
+ 30350    7     PSKIP_CASE1_S1                                              -1       1.7000 V       1.7996 V           2.0000 V       0.0000         0       
+ 30400    7     PSKIP_CASE3_S1                                              -1       -500.0000 mV   556.6196 uV        500.0000 mV    0.0000         0       
+ 30450    7     PSKIP_CASE1_S2                                              -1       1.7000 V       1.7940 V           2.0000 V       0.0000         0       
+ 30500    7     PSKIP_CASE3_S2                                              -1       -500.0000 mV   243.7678 uV        500.0000 mV    0.0000         0       
+ 30550    7     PSKIP_CASE1_S3                                              -1       1.7000 V       1.8010 V           2.0000 V       0.0000         0       
+ 30600    7     PSKIP_CASE3_S3                                              -1       -500.0000 mV   400.1937 uV        500.0000 mV    0.0000         0       
+ 30650    7     PSKIP_CASE1_S4                                              -1       1.7000 V       1.8010 V           2.0000 V       0.0000         0       
+ 30700    7     PSKIP_CASE3_S4                                              -1       -500.0000 mV   243.7678 uV        500.0000 mV    0.0000         0       
+ 30750    7     PSKIP_CASE1_S5                                              -1       1.7000 V       1.8010 V           2.0000 V       0.0000         0       
+ 30800    7     PSKIP_CASE3_S5                                              -1       -500.0000 mV   243.7678 uV        500.0000 mV    0.0000         0       
+<HF_VDIP>
+ 30950    7     S1_PFM_T_SPEND_PT                                           -1       0.0000 %%      0.0000 %%          25.0000 %%     0.0000 %       0       
+ 30960    7     S2_PFM_T_SPEND_PT                                           -1       0.0000 %%      0.0000 %%          25.0000 %%     0.0000 %       0       
+ 30970    7     S3_PFM_T_SPEND_PT                                           -1       0.0000 %%      0.0000 %%          25.0000 %%     0.0000 %       0       
+ 30980    7     S4_PFM_T_SPEND_PT                                           -1       0.0000 %%      0.0000 %%          25.0000 %%     0.0000 %       0       
+ 30990    7     S5_PFM_T_SPEND_PT                                           -1       0.0000 %%      0.0000 %%          25.0000 %%     0.0000 %       0       
+<LN_BBCLK_OK>
+ 31450    7     BCLK_GEN_S1_ST                                              -1       1.0000         1.0000             1.0000         0.0000         0       
+ 31500    7     BCLK_GEN_S2_ST                                              -1       1.0000         1.0000             1.0000         0.0000         0       
+ 31550    7     BCLK_GEN_S3_ST                                              -1       1.0000         1.0000             1.0000         0.0000         0       
+ 31600    7     BCLK_GEN_S4_ST                                              -1       1.0000         1.0000             1.0000         0.0000         0       
+ 31650    7     BCLK_GEN_S5_ST                                              -1       1.0000         1.0000             1.0000         0.0000         0       
+<XO_19P2_AGC_V_RMA>
+ 31750    7     XO_19M_OUT_V                                                -1       200.0000 mV    365.1216 mV        900.0000 mV    0.0000 m       0       
+<IDD_OFF_END>
+ 31850    7     IDD_OFF_EOT_WT                                              -1       0.0000 ms      100.0000 ms        301.0000 ms    0.0000 m       0       
+ 31860    7     IDD_OFF_EOT                                                 -1       3.0000 uA      6.3854 uA          18.0000 uA     0.0000 u       0       
+ 31870    7     PON_RESET_N_VOL                                             -1       -500.0000 mV   -262.5999 mV       500.0000 mV    0.0000         0       
+<PBS_RAM_FUNC_CHECK>
+ 32000    7     PBS_RAM_55AA                                                -1       0.0000         0.0000             0.0000         0.0000         0       
+ 32001    7     PBS_RAM_SDO                                                 -1       0.0000         0.0000             0.0000         0.0000         0       
+ 32002    7     PBS_RAM_VDIP                                                -1       0.0000         0.0000             0.0000         0.0000         0       
+ 32003    7     PBS_RAM_VSPIKE                                              -1       0.0000         0.0000             0.0000         0.0000         0       
+<Info_KGD>
+ 33000    7     5.30.00_flx (P10)                                           -1       N/A            1.0000             N/A            0.0000         0       
+ 33001    7     11.04.17.00.51                                              -1       N/A            1.0000             N/A            0.0000         0       
+ 33002    7     VA-NV917-12B                                                -1       N/A            1.0000             N/A            0.0000         0       
+ 33003    7     023                                                         -1       N/A            23.0000            N/A            0.0000         0       
+ 33004    7     5.30.00_flx (P10)                                           -1       N/A            1.0000             N/A            0.0000         0       
+ 33005    7     11.04.17.00.51                                              -1       N/A            1.0000             N/A            0.0000         0       
+ 33006    7     DO_ALL                                                      -1       N/A            0.0000             N/A            0.0000         0       
+ 33007    7     Burn_PBSOTP                                                 -1       N/A            -1.0000            N/A            0.0000         0       
+ 33008    7     PBS_OTP_RAW                                                 -1       N/A            0.0000             N/A            0.0000         0       
+ 33009    7     PseudoBurn_TRIMOTP                                          -1       N/A            0.0000             N/A            0.0000         0       
+ 33010    7     Burn_TRIMOTP                                                -1       N/A            0.0000             N/A            0.0000         0       
+ 33011    7     TrimTTR_Flow                                                -1       N/A            0.0000             N/A            0.0000         0       
+ 33012    7     STARTING_SITES                                              -1       N/A            1.0000             N/A            0.0000         0       
+ 33013    7     TOUCHDOWN_NUMBER                                            -1       N/A            1.0000             N/A            0.0000         0       
+ 33014    7     TEST_TIME                                                   -1       N/A            6.6077 s           N/A            0.0000         0       
+ 33015    7     INDEX_TIME                                                  -1       N/A            163.8516 s         N/A            0.0000         0       
+
+ Site Failed tests/Executed tests
+------------------------------------
+    7       0     825
+
+ Site    Sort     Bin
+------------------------------------
+    7       1       1
+=========================================================================

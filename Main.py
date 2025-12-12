@@ -5,6 +5,12 @@ Created on Wed Oct 22 15:48:20 2025
 @author: shaksyed
 """
 
+# STEP1 : Importing libs
+# STEP2 : Perform decoding
+# STEP3 : Sorting record specific data, for now sorting data in text file, exploring db options still
+
+# MIR, DTR, PTR, TSR, PRR, PIR, SBR, HBR, etc, recodr types verified and working perfectly
+
 import os
 import struct
 import pandas as pd
@@ -69,110 +75,133 @@ def decode_stdf(file_path):
                 if len(data) >= 10:
                     decoder = PTRDecoder(data)
                     decoded = decoder.decode()
-                    all_records.append(decoded)
+                    yield decoded
+                    #all_records.append(decoded)
             elif rec_typ == 15 and rec_sub == 15:  # MPR
                     decoder = MPRDecoder(data)
                     decoded = decoder.decode()
-                    all_records.append(decoded)
+                    yield decoded
+                    #all_records.append(decoded)
             elif rec_typ == 15 and rec_sub == 20:  # FTR
                     decoder = FTRDecoder(data)
                     decoded = decoder.decode()
-                    all_records.append(decoded)
+                    yield decoded
+                    #all_records.append(decoded)
            #No description available in the STDF V4 document
            # elif rec_typ == 15 and rec_sub == 30:  # STR
            #         print("Pending")
                     
             # Generic data
             elif rec_typ == 50 and rec_sub == 10:  # GDR
-                decoder = GDRDecoder(header + data)
-                decoded = decoder.decode()
-                all_records.append(decoded)
+                     decoder = GDRDecoder(header + data)
+                     decoded = decoder.decode()
+                     yield decoded
+                     #all_records.append(decoded)
             elif rec_typ == 50 and rec_sub == 30:  # DTR
                     decoder = DTRDecoder(data)
                     decoded = decoder.decode()
-                    all_records.append(decoded)
+                    yield decoded
+                    #all_records.append(decoded)
                 
              # Data collected per program segment
             elif rec_typ == 20 and rec_sub == 10:  # BPS
                     decoder = BPSDecoder(data)
                     decoded = decoder.decode()
-                    all_records.append(decoded)
+                    yield decoded
+                    #all_records.append(decoded)
             elif rec_typ == 20 and rec_sub == 20:  # EPS
                     decoder = EPSDecoder(data)
                     decoded = decoder.decode()
-                    all_records.append(decoded)
+                    yield decoded
+                    #all_records.append(decoded)
             
              # Data collected per test in the test program
             elif rec_typ == 10 and rec_sub == 30:  # TSR
                     decoder = TSRDecoder(data)
                     decoded = decoder.decode()
-                    all_records.append(decoded)
+                    yield decoded
+                    #all_records.append(decoded)
                 
              # Data collected on a per part basis
             elif rec_typ == 5 and rec_sub == 10:  # PIR
                     decoder = PIRDecoder(data)
                     decoded = decoder.decode()
-                    all_records.append(decoded)
+                    yield decoded
+                    #all_records.append(decoded)
             elif rec_typ == 5 and rec_sub == 20:  # PRR
                     decoder = PRRDecoder(data)
                     decoded = decoder.decode()
-                    all_records.append(decoded)
+                    yield decoded
+                    #all_records.append(decoded)
                 
             #  Data collected per wafer
             elif rec_typ == 2 and rec_sub == 10:  # WIR
                     decoder = WIRDecoder(data)
                     decoded = decoder.decode()
-                    all_records.append(decoded)
+                    yield decoded
+                    #all_records.append(decoded)
             elif rec_typ == 2 and rec_sub == 20:  # WRR
                     decoder = WRRDecoder(data)
                     decoded = decoder.decode()
-                    all_records.append(decoded)
+                    yield decoded
+                    #all_records.append(decoded)
             elif rec_typ == 2 and rec_sub == 20:  # WCR
                     decoder = WCRDecoder(data)
                     decoded = decoder.decode()
-                    all_records.append(decoded)
+                    yield decoded
+                    #all_records.append(decoded)
                           
             #  Data collected on a per lot basis
             elif rec_typ == 1 and rec_sub == 10:  # MIR
                     decoder = MIRDecoder(data)
                     decoded = decoder.decode()
-                    all_records.append(decoded)
+                    yield decoded
+                    #all_records.append(decoded)
             elif rec_typ == 1 and rec_sub == 20:  # MRR
                     decoder = MRRDecoder(data)
                     decoded = decoder.decode()
-                    all_records.append(decoded)
+                    yield decoded
+                    #all_records.append(decoded)
             elif rec_typ == 1 and rec_sub == 30:  # PCR
                     decoder = PCRDecoder(data)
                     decoded = decoder.decode()
-                    all_records.append(decoded)
+                    yield decoded
+                    #all_records.append(decoded)
             elif rec_typ == 1 and rec_sub == 40:  # HBR
                     decoder = HBRDecoder(data)
                     decoded = decoder.decode()
-                    all_records.append(decoded)
+                    yield decoded
+                    #all_records.append(decoded)
             elif rec_typ == 1 and rec_sub == 50:  # SBR
                     decoder = SBRDecoder(data)
                     decoded = decoder.decode()
-                    all_records.append(decoded)
+                    yield decoded
+                    #all_records.append(decoded)
             elif rec_typ == 1 and rec_sub == 60:  # PMR
                     decoder = PMRDecoder(data)
                     decoded = decoder.decode()
-                    all_records.append(decoded)
+                    yield decoded
+                    #all_records.append(decoded)
             elif rec_typ == 1 and rec_sub == 62:  # PGR
                     decoder = PGRDecoder(data)
                     decoded = decoder.decode()
-                    all_records.append(decoded)
+                    yield decoded
+                    #all_records.append(decoded)
             elif rec_typ == 1 and rec_sub == 63:  # PLR
                     decoder = PLRDecoder(data)
                     decoded = decoder.decode()
-                    all_records.append(decoded)
+                    yield decoded
+                    #all_records.append(decoded)
             elif rec_typ == 1 and rec_sub == 70:  # RDR
                     decoder = RDRDecoder(data)
                     decoded = decoder.decode()
-                    all_records.append(decoded)
+                    yield decoded
+                    #all_records.append(decoded)
             elif rec_typ == 1 and rec_sub == 80:  # SDR
                     decoder = SDRDecoder(data)
                     decoded = decoder.decode()
-                    all_records.append(decoded)
+                    yield decoded
+                    #all_records.append(decoded)
             #No description available in the STDF V4 document
             # elif rec_typ == 1 and rec_sub == 90:  # PSR
             #         decoder = PSRDecoder(data)
@@ -191,286 +220,262 @@ def decode_stdf(file_path):
             elif rec_typ == 0 and rec_sub == 10:  # FAR
                     decoder = FARDecoder(data)
                     decoded = decoder.decode()
-                    all_records.append(decoded)
+                    yield decoded
+                    #all_records.append(decoded)
             elif rec_typ == 0 and rec_sub == 20:  # ATR
                     decoder = ATRDecoder(data)
                     decoded = decoder.decode()
-                    all_records.append(decoded)
+                    yield decoded
+                    #all_records.append(decoded)
             #No description available in the STDF V4 document
             # elif rec_typ == 0 and rec_sub == 30:  # VUR
             #         print("Pending")
             
     return all_records
 
+#Helpers to handle the none value
 
-#  Example usage 
-file_path = 'test_data1.std'  # Replace with your actual file path
-
-
-# Check file extension -- >> for STDF file
-if file_path.lower().endswith(('.std', '.stdf')):
-    records = decode_stdf(file_path)
-
-
-# Future enhancements
-# # Check file extension -- >> for ATDF file
-# elif file_path.lower().endswith(('.atdf')):
-#     records = decode_atdf(file_path)
-
-# # Check file extension -- >> for txt file
-# elif file_path.lower().endswith(('.atdf')):
-#     records = decode_txt(file_path)
-
-# # Check file extension -- >> for csv file
-# elif file_path.lower().endswith(('.csv')):
-#     records = decode_csv(file_path)
-
-    # Exporting all records to CSV
-    csv_file_path = "output_8.txt"
-    if records:
-        all_keys = set()
-        for record in records:
-            all_keys.update(record.keys())
-
-        with open(csv_file_path, mode='w', newline='', encoding='utf-8') as csv_file:
-            writer = csv.DictWriter(csv_file, fieldnames=list(all_keys))
-            writer.writeheader()
-            for record in records:
-                writer.writerow(record)
-
-        print(f"All decoded records have been exported to {csv_file_path}.")
-    else:
-        print("No records found to export.")
-
-    # # Plotting each record
-    # for record in records:
-    #     labels = ['LO_LIMIT', 'RESULT', 'HI_LIMIT']
-        
-    #     # If values are missing fill it with "0"
-    #     try:
-    #         values = [
-    #             float(record.get('LO_LIMIT', 0.0)),
-    #             float(record.get('RESULT', 0.0)),
-    #             float(record.get('HI_LIMIT', 0.0))
-    #         ]
-    #     except (ValueError, TypeError) as e:
-    #         print(f"Error converting values to float: {e}")
-    #         values = [0.0, 0.0, 0.0]
-    #     except Exception as e:
-    #         print(f"Unexpected error: {e}")
-    #         values = [0.0, 0.0, 0.0]
-
-    #     if all(v == 0.0 for v in values):
-    #         print(f"Skipping plot for record due to missing or zero values: {record}")
-    #         continue
-        
-    # # #Putting data into the data grids.
-    # #     try:
-    # #         values = [
-    # #             str(record.get('RECORD_TYPE'), "Unkwon record type"),
-    # #             float(record.get('TEST_NUM'), 9999.9999),
-    # #             str(record.get('RECORD_TYPE'), "Unkwon test name"),
-    # #             float(record.get('LO_LIMIT'), 0.0),
-    # #             float(record.get('RESULT'), 0.0),
-    # #             float(record.get('HI_LIMIT'), 0.0),
-    # #             str(record.get('UNITS'), "ghosts"),
-    # #         ]
-    # #     except (ValueError, TypeError) as e:
-    # #         print(f"Can't able to find the test details: {e}")
-    # #     except Exception as e:
-    # #         print(f" something is very wrong with the data: {e}")
-    # #         values = ["GhostRecordType", 0.0, "DummyTname", 0.0, 0.0, 0.0, "DummyUnit"]
-            
-    # #         columns = ["RecordType", "TEST_NUM", "TEST_NAME", "LO_LIMIT", "RESULT", "HI_LIMIT", "UNITS"]
-            
-    # #         df = pd.DataFrame([values], columns=columns)
-    # #         print(df)
-
-    #     # plt.figure(figsize=(6, 4))
-    #     # plt.bar(labels, values, color='skyblue')
-    #     # plt.xlabel('Measurement Type')
-    #     # plt.ylabel('Value')
-    #     # plt.title(f"Test #{record.get('TEST_NUM', 'N/A')} - {record.get('TEST_TXT', '')}")
-    #     # plt.grid(True)
-    #     # plt.tight_layout()
-    #     # plt.show()    
-        
-    #     # Create the Q-Q plot
-    #     # plt.figure(figsize=(6, 4))
-    #     # stats.probplot(values, dist="norm", plot=plt)
-
-    #     # # Customize the plot
-    #     # plt.title(f"Test #{record.get('TEST_NUM', 'N/A')} - {record.get('TEST_TXT', '')}")
-    #     # plt.xlabel('Measurement Type')
-    #     # plt.ylabel('Value')
-    #     # plt.grid(True)
-    #     # plt.tight_layout()
-    #     # plt.show() 
-    
-
-# # Process each record
-# for record in records:
-#     labels = ['LO_LIMIT', 'RESULT', 'HI_LIMIT']
-
-#     # Extract values with error handling
-#     try:
-#         values = [
-#             float(record.get('LO_LIMIT', 0.0)),
-#             float(record.get('RESULT', 0.0)),
-#             float(record.get('HI_LIMIT', 0.0))
-#         ]
-#     except (ValueError, TypeError) as e:
-#         print(f"Error converting values to float: {e}")
-#         values = [0.0, 0.0, 0.0]
-#     except Exception as e:
-#         print(f"Unexpected error: {e}")
-#         values = [0.0, 0.0, 0.0]
-
-#     # Skip plotting if all values are zero
-#     if all(v == 0.0 for v in values):
-#         #print(f"Skipping plot for record due to missing or zero values: {record}")
-#         continue
-
-#     # # Extract full record details for DataFrame
-#     try :
-#         record_type = str(record.get('RECORD_TYPE', "NAN"))
-#         #print(f"Printing the DTR record value : {record_type}")
-#         print(record_type)
-#     except (ValueError) as e:
-#         record_type="ghost record"
-#         print(f"The unknown record type :{e}")
-
-# record_type = str(record.get("RECORD_TYPE", "N/A"))
-    
-# if record_type == "PTR":
-#     try:
-#         df_values = [
-#             int(record.get('SITE_NUM', 99999)),
-#             str(record.get('RECORD_TYPE', "Unknown record type")),
-#             float(record.get('TEST_NUM', 9999.9999)),
-#             str(record.get('TEST_TXT', "Unknown test name")),
-#             float(record.get('LO_LIMIT', 0.0)),
-#             float(record.get('RESULT', 0.0)),
-#             float(record.get('HI_LIMIT', 0.0)),
-#             str(record.get('UNITS', "ghosts"))
-#         ]
-
-#     # Create and display DataFrame
-#     # columns = ["SITE", "RecordType", "TEST_NUM", "TEST_NAME", "LO_LIMIT", "RESULT", "HI_LIMIT", "UNITS"]
-#     # df = pd.DataFrame([df_values], columns)
-#     # print("Data in DataFrame format:")
-#     # print(df)
-
-
-#         # Create DataFrame
-#         df = pd.DataFrame([df_values], columns=[
-#             "SITE_NUM", "RECORD_TYPE", "TEST_NUM", "TEST_NAME",
-#             "LO_LIMIT", "RESULT", "HI_LIMIT", "UNITS"
-#         ])
-
-#     # Open the file in append mode and write each row
-#         with open('DataTxt.txt', 'a') as f:
-#             for index, row in df.iterrows():
-#                 line = '\t'.join(str(value) for value in row.values)
-#                 f.write(line + '\n')
-#                 print("PTR rows appended to output.txt")
-                
-#     except (ValueError, TypeError) as e:
-#         print(f"Can't find the test details: {e}")
-#         df_values = [99999, "GhostRecordType", 0.0, "DummyTname", 0.0, 0.0, 0.0, "DummyUnits"]
-
-#     # Streamlit UI
-#     # st.title("Test Records Viewer")
-#     # st.write("Scroll below to view all test records:")
-#     # st.dataframe(df, height=400)
-
-
-#     # Bar plot
-#     # plt.figure(figsize=(6, 4))
-#     # plt.bar(labels, values, color='skyblue')
-#     # plt.xlabel('Measurement Type')
-#     # plt.ylabel('Value')
-#     # plt.title(f"Test #{record.get('TEST_NUM', 'N/A')} - {record.get('TEST_TXT', '')}")
-#     # plt.grid(True)
-#     # plt.tight_layout()
-#     # plt.show()
-
-#     # Q-Q plot
-#     # plt.figure(figsize=(6, 4))
-#     # stats.probplot(values, dist="norm", plot=plt)
-#     # plt.title(f"Q-Q Plot for Test #{record.get('TEST_NUM', 'N/A')} - {record.get('TEST_TXT', '')}")
-#     # plt.xlabel('Theoretical Quantiles')
-#     # plt.ylabel('Sample Quantiles')
-#     # plt.grid(True)
-#     # plt.tight_layout()
-#     # plt.show()
-
-#     print("Processing complete.")
-
-# else:
-#     print("Unsupported file type. Please use a .std or .stdf file.")
-
-
-file_path = 'test_data2.std'  # Replace with your actual file path
-
-# Validate file extension
-if file_path.lower().endswith(('.std', '.stdf')):
+def safe_int(value, default=99999):
+    # Treat None, empty string, and non-numeric as default
+    if value is None:
+        return default
     try:
-        records = decode_stdf(file_path)  # Make sure this function is defined
+        return int(value)
+    except (ValueError, TypeError):
+        return default
 
-        if not records:
-            print("No records found to export.")
-        else:
-            # Export all records to CSV
-            csv_file_path = "output_8.txt"
-            all_keys = set()
-            for record in records:
-                all_keys.update(record.keys())
 
-            with open(csv_file_path, mode='w', newline='', encoding='utf-8') as csv_file:
-                writer = csv.DictWriter(csv_file, fieldnames=list(all_keys))
-                writer.writeheader()
-                for record in records:
-                    writer.writerow(record)
+def safe_float(value, default=999.99):
+    if value is None:
+        return default
+    try:
+        return float(value)
+    except (ValueError, TypeError):
+        return default
 
-            print(f"All decoded records have been exported to {csv_file_path}.")
+def safe_str(value, default=""):
+    if value is None:
+        return default
+    try:
+        return str(value)
+    except Exception:
+        return default
 
-            # Process each record
-            for record in records:
-                record_type = str(record.get("RECORD_TYPE", "N/A"))
-                # if record_type == "GDR":
-                #     print(record_type)
-                # try:
-                #     values = [
-                #         float(record.get('LO_LIMIT', 0.0)),
-                #         float(record.get('RESULT', 0.0)),
-                #         float(record.get('HI_LIMIT', 0.0))
-                #     ]
-                # except (ValueError, TypeError) as e:
-                #     print(f"Error converting values to float: {e}")
-                #     values = [0.0, 0.0, 0.0]
 
-                # if all(v == 0.0 for v in values):
-                #     continue
+def get_with_aliases(record, *keys):
+    for k in keys:
+        v = record.get(k)
+        if v is not None:
+            return v
+    # If all are None, still return None
+    return None
 
-                record_type = str(record.get('RECORD_TYPE', "NAN"))
-                #print(f"Record Type: {record_type}")
-                
-                if record_type in ["MIR"]:
-                    print("YES IM MIR EXISTS")
 
-                if record_type in ["DTR"]:
+def normalize_test_typ(v, default=""):
+    """
+    TEST_TYP (C*1) may come as a 1-char string or a byte/int depending on parser.
+    Normalize to a single-character string.
+    """
+    if v is None:
+        return default
+    if isinstance(v, int):
+        # Convert a byte value (0..255) to a char; otherwise fall back to default
+        return chr(v) if 0 <= v <= 255 else default
+    # If bytes of length 1, decode; if longer string, take first char
+    if isinstance(v, (bytes, bytearray)):
+        try:
+            return v[:1].decode('ascii', errors='replace')
+        except Exception:
+            return default
+    s = str(v)
+    return s[:1] if s else default
+
+    
+file_path = 'gu_site7.std'  # Replace with your actual file path
+
+os.makedirs('OUTPUT', exist_ok=True)
+
+if file_path.lower().endswith(('.std', '.stdf')):
+    processed = 0
+    written = 0
+    skipped = 0
+    errors = 0
+    for record in decode_stdf(file_path):  # generator iteration
+        processed += 1
+        record_type = str(record.get("RECORD_TYPE", "N/A"))
+        
+        # MIR
+        if record_type == "MIR":
+            df_vals_MIR = [
+                str(record.get('LOT_ID', "LotID is Empty")),
+                str(record.get('PART_TYP', "PartType is Empty")),
+                str(record.get('NODE_NAM', "Tester name is Empty")),
+                str(record.get('TSTR_TYP', "TesterType is Empty")),
+                str(record.get('JOB_NAM', "Job Name is Empty")),
+                str(record.get('SBLOT_ID', "Sub LOT ID is Empty")),
+                str(record.get('OPER_NAM', "Operator is Empty")),
+                str(record.get('EXEC_TYP', "Empty")),
+                str(record.get('EXEC_VER', "Empty")),
+                str(record.get('TEST_COD', "Empty")),
+                str(record.get('TST_TEMP', "Empty")),
+            ]
+            df_MIR = pd.DataFrame(
+                [df_vals_MIR],
+                columns=[
+                    "LOT_ID","PART_TYP","NODE_NAM","TSTR_TYP","JOB_NAM","SBLOT_ID",
+                    "OPER_NAM","EXEC_TYP","EXEC_VER","TEST_COD","TST_TEMP"
+                ]
+            )
+            df_MIR.to_csv('OUTPUT/DataMIR.txt', sep='\t', header=False, index=False, mode='a')
+            print("MIR rows appended to DataMIR.txt")
+        
+
+                #WIR
+        elif record_type in ["WIR"]:
+                    print("YES WIR IS EXECUTING")
+                    df_val_WIR = [float(record.get('WAFER_ID', "Wafer ID is Empty"))]
+                    df_WIR = pd.DataFrame([df_val_WIR])
+
+                    with open('OUTPUT/DataWIR.txt', 'a') as f:
+                        for index, row in df_WIR.iterrows():
+                                line = '\t'.join(str(value) for value in row.values)
+                                f.write(line + '\n')
+                        print("WIR rows appended to DataWIR.txt")
+
+                #WRR
+        elif record_type in ["WRR"]:
+                    print("YES WRR IS EXECUTING")
+                    df_val_WRR = [
+                        int(record.get('PART_CNT', 99999)),
+                        int(record.get('RTST_CNT', 99999)),
+                        int(record.get('ABRT_CNT', 99999)),
+                        int(record.get('GOOD_CNT', 99999)),
+                        int(record.get('FUNC_CNT', 99999)),
+                        str(record.get('WAFER_ID', "Wafer ID is Empty")),
+                        str(record.get('FABWF_ID', "FABWafer ID is Empty")),
+                        ]
+                    df_WRR = pd.DataFrame([df_val_WRR])
+
+                    with open('OUTPUT/DataWRR.txt', 'a') as f:
+                        for index, row in df_WRR.iterrows():
+                                line = '\t'.join(str(value) for value in row.values)
+                                f.write(line + '\n')
+                        print("WIR rows appended to DataWIR.txt")
+                  
+                #PIR 
+        elif record_type in ["PIR"]:
+                    print("YES PIR IS EXECUTING")
+                    
+                    head_num = safe_int(record.get('HEAD_NUM'), 99999)
+                    site_num = safe_int(record.get('SITE_NUM'), 99999)
+                    df_PIR = pd.DataFrame([[head_num, site_num]], columns=["HEAD_NUM", "SITE_NUM"])
+
+                    #df_PIR = pd.DataFrame([df_val_PIR])
+
+                    with open('OUTPUT/DataPIR.txt', 'a') as f:
+                        for index, row in df_PIR.iterrows():
+                                line = '\t'.join(str(value) for value in row.values)
+                                f.write(line + '\n')
+                        print("PIR rows appended to DataPIR.txt")
+                  
+                #PRR        
+        elif record_type in ["PRR"]:
+                    print("YES PRR IS EXECUTING")
+                                    
+                    # Try common casings; adjust to your parser’s actual keys
+                    head_num  = safe_int(get_with_aliases(record, 'HEAD_NUM',  'head_num'))
+                    site_num  = safe_int(get_with_aliases(record, 'SITE_NUM',  'site_num'))
+                    part_flg  = safe_int(get_with_aliases(record, 'PART_FLG',  'part_flg'))
+                    num_test  = safe_int(get_with_aliases(record, 'NUM_TEST',  'num_test'))
+                    hard_bin  = safe_int(get_with_aliases(record, 'HARD_BIN',  'hard_bin'))
+                    soft_bin  = safe_int(get_with_aliases(record, 'SOFT_BIN',  'soft_bin'))
+                    x_coord   = safe_int(get_with_aliases(record, 'X_COORD',   'x_coord'))
+                    y_coord   = safe_int(get_with_aliases(record, 'Y_COORD',   'y_coord'))
+                    test_t    = safe_float(get_with_aliases(record, 'TEST_T',   'test_t'))   # seconds
+                    part_id   = safe_str (get_with_aliases(record, 'PART_ID',   'part_id'),  default="")  # often alphanumeric
+                    part_txt  = safe_str (get_with_aliases(record, 'PART_TXT',  'part_txt'), default="")
+                    part_fix  = safe_str (get_with_aliases(record, 'PART_FIX',  'part_fix'), default="")
+
+                    df_val_PRR = [head_num, site_num, part_flg, num_test, hard_bin, soft_bin,x_coord, y_coord, test_t, part_id, part_txt, part_fix]
+                    
+                    df_PRR = pd.DataFrame([df_val_PRR])
+
+                    with open('OUTPUT/DataPRR.txt', 'a') as f:
+                        for index, row in df_PRR.iterrows():
+                                line = '\t'.join(str(value) for value in row.values)
+                                f.write(line + '\n')
+                        print("PIR rows appended to DataPRR.txt")
+                        
+                #TSR
+        elif record_type == "TSR":
+                     print("YES TSR IS EXECUTING")
+
+                     head_num = safe_int(record.get('HEAD_NUM'))
+                     site_num = safe_int(record.get('SITE_NUM'))
+                     test_typ = normalize_test_typ(record.get('TEST_TYP'), default="")
+                     test_num = safe_int(record.get('TEST_NUM'))
+                     exec_cnt = safe_int(record.get('EXEC_CNT'))
+                     fail_cnt = safe_int(record.get('FAIL_CNT'))
+                     test_nam = str(record.get('TEST_NAM', "TEST_NAM is Empty") or "")
+                     seq_name = str(record.get('SEQ_NAME', "SEQ_NAME is Empty") or "")
+                     test_lbl = str(record.get('TEST_LBL', "TEST_LBL is Empty") or "")
+
+                     df_TSR = pd.DataFrame([[head_num, site_num, test_typ, test_num, exec_cnt, fail_cnt, test_nam, seq_name, test_lbl]])
+
+                     os.makedirs('OUTPUT', exist_ok=True)
+                     df_TSR.to_csv('OUTPUT/DataTSR.txt', sep='\t', header=False, index=False, mode='a')
+                     print("TSR rows appended to DataTSR.txt")
+                     
+                #HBR
+        elif record_type == "HBR":
+                     print("YES HBR IS EXECUTING")
+
+                     head_num = safe_int(record.get('HEAD_NUM'))
+                     site_num = safe_int(record.get('SITE_NUM'))
+                     hbin_num = safe_int(record.get('HBIN_NUM'))
+                     hbin_cnt = safe_int(record.get('HBIN_CNT'))
+                     hbin_pf = safe_int(record.get('HBIN_PF'))
+                     hbin_name = str(record.get('HBIN_NAME', "TEST_NAM is Empty") or "")
+
+
+                     df_HBR = pd.DataFrame([[head_num, site_num, hbin_num, hbin_cnt, hbin_pf, hbin_name]])
+
+                     os.makedirs('OUTPUT', exist_ok=True)
+                     df_HBR.to_csv('OUTPUT/DataHBR.txt', sep='\t', header=False, index=False, mode='a')
+                     print("HBR rows appended to DataHBR.txt")
+
+                #SBR
+        elif record_type == "SBR":
+                     print("YES SBR IS EXECUTING")
+
+                     head_num = safe_int(record.get('HEAD_NUM'))
+                     site_num = safe_int(record.get('SITE_NUM'))
+                     sbin_num = safe_int(record.get('SBIN_NUM'))
+                     sbin_cnt = safe_int(record.get('SBIN_CNT'))
+                     sbin_pf = safe_int(record.get('SBIN_PF'))
+                     sbin_name = str(record.get('SBIN_NAME', "TEST_NAM is Empty") or "")
+
+
+                     df_SBR = pd.DataFrame([[head_num, site_num, sbin_num, sbin_cnt, sbin_pf, sbin_name]])
+
+                     os.makedirs('OUTPUT', exist_ok=True)
+                     df_SBR.to_csv('OUTPUT/DataSBR.txt', sep='\t', header=False, index=False, mode='a')
+                     print("SBR rows appended to DataSBR.txt")
+
+
+                #DTR
+        elif record_type in ["DTR"]:
                     df_values = [record_type,str(record.get('TEXT_DAT', "Unknown DTR record"))]
                     df = pd.DataFrame([df_values])
 
-                    with open('DataTxt.txt', 'a') as f:
+                    with open('OUTPUT/DataDTR.txt', 'a') as f:
                         for index, row in df.iterrows():
                                 line = '\t'.join(str(value) for value in row.values)
                                 f.write(line + '\n')
-                        #print("PTR rows appended to DataTxt.txt")
+                        print("PTR rows appended to DataDTR.txt")
 
-                      
-                elif record_type in ["PTR"]:
+                #PTR     
+        elif record_type in ["PTR"]:
                     try:
                         df_values = [
                             int(record.get('SITE_NUM', 99999)),
@@ -487,19 +492,21 @@ if file_path.lower().endswith(('.std', '.stdf')):
                              "SITE_NUM", "RECORD_TYPE", "TEST_NUM", "TEST_NAME",
                              "LO_LIMIT", "RESULT", "HI_LIMIT", "UNITS"
                          ])
-                        
-                        #print(df)
 
-                        with open('DataTxt.txt', 'a') as f:
+                        with open('OUTPUT/DataPTR.txt', 'a') as f:
                             for index, row in df.iterrows():
                                 line = '\t'.join(str(value) for value in row.values)
                                 f.write(line + '\n')
-                            #print("PTR rows appended to DataTxt.txt")
+                            #print("PTR rows appended to DataPTR.txt")
 
                     except (ValueError, TypeError) as e:
                         print(f"Can't find the test details: {e}")
 
-    except Exception as e:
-        print(f"Error decoding STDF file: {e}")
+# After the loop:
+if processed == 0:
+    print("No records found to export.")
 else:
-    print("Unsupported file type. Please use a .std or .stdf file.")
+    print(f"Processed: {processed}, Written: {written}, Skipped: {skipped}, Errors: {errors}")
+
+
+
