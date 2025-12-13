@@ -18,6 +18,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import csv
 import scipy.stats as stats
+import json
+from datetime import datetime
+
 # import streamlit as st
 
 #Importing Python STDF libararies, i will use it in End to decode
@@ -307,6 +310,7 @@ if file_path.lower().endswith(('.std', '.stdf')):
         # MIR
         if record_type == "MIR":
             df_vals_MIR = [
+                record_type,
                 str(record.get('LOT_ID', "LotID is Empty")),
                 str(record.get('PART_TYP', "PartType is Empty")),
                 str(record.get('NODE_NAM', "Tester name is Empty")),
@@ -322,18 +326,37 @@ if file_path.lower().endswith(('.std', '.stdf')):
             df_MIR = pd.DataFrame(
                 [df_vals_MIR],
                 columns=[
-                    "LOT_ID","PART_TYP","NODE_NAM","TSTR_TYP","JOB_NAM","SBLOT_ID",
+                    "RECORD_TYPE","LOT_ID","PART_TYP","NODE_NAM","TSTR_TYP","JOB_NAM","SBLOT_ID",
                     "OPER_NAM","EXEC_TYP","EXEC_VER","TEST_COD","TST_TEMP"
                 ]
             )
             df_MIR.to_csv('OUTPUT/DataMIR.txt', sep='\t', header=False, index=False, mode='a')
             print("MIR rows appended to DataMIR.txt")
-        
+
+            columns_mir = [
+                    "RECORD_TYPE", "LOT_ID","PART_TYP","NODE_NAM","TSTR_TYP","JOB_NAM","SBLOT_ID",
+                    "OPER_NAM","EXEC_TYP","EXEC_VER","TEST_COD","TST_TEMP"
+                                    ]
+
+                        # Build the JSON-ready dict (`rec`) from df_values
+            rec = dict(zip(columns_mir,df_vals_MIR))
+            # Optional: add metadata
+            rec["timestamp"] = datetime.utcnow().isoformat(timespec="seconds") + "Z"
+
+                             #JSON                   
+                             # Write NDJSON (append mode)
+            out_path = 'OUTPUT/DataAll.ndjson'
+            with open(out_path, 'a', encoding='utf-8') as f:
+                f.write(json.dumps(rec, ensure_ascii=False) + '\n')
+
 
                 #WIR
         elif record_type in ["WIR"]:
                     print("YES WIR IS EXECUTING")
-                    df_val_WIR = [float(record.get('WAFER_ID', "Wafer ID is Empty"))]
+                    df_val_WIR = [
+                        record_type, 
+                        float(record.get('WAFER_ID', "Wafer ID is Empty"))
+                        ]
                     df_WIR = pd.DataFrame([df_val_WIR])
 
                     with open('OUTPUT/DataWIR.txt', 'a') as f:
@@ -341,11 +364,28 @@ if file_path.lower().endswith(('.std', '.stdf')):
                                 line = '\t'.join(str(value) for value in row.values)
                                 f.write(line + '\n')
                         print("WIR rows appended to DataWIR.txt")
+                        
+                        columns_wrr = [
+                                    "RECORD_TYPE", "WAFER_ID"
+                                    ]
+
+                        # Build the JSON-ready dict (`rec`) from df_values
+                        rec = dict(zip(columns_wrr,df_val_WIR))
+                        # Optional: add metadata
+                        rec["timestamp"] = datetime.utcnow().isoformat(timespec="seconds") + "Z"
+
+                             #JSON                   
+                             # Write NDJSON (append mode)
+                        out_path = 'OUTPUT/DataAll.ndjson'
+                        with open(out_path, 'a', encoding='utf-8') as f:
+                                 f.write(json.dumps(rec, ensure_ascii=False) + '\n')
+
 
                 #WRR
         elif record_type in ["WRR"]:
                     print("YES WRR IS EXECUTING")
                     df_val_WRR = [
+                        record_type,
                         int(record.get('PART_CNT', 99999)),
                         int(record.get('RTST_CNT', 99999)),
                         int(record.get('ABRT_CNT', 99999)),
@@ -361,6 +401,22 @@ if file_path.lower().endswith(('.std', '.stdf')):
                                 line = '\t'.join(str(value) for value in row.values)
                                 f.write(line + '\n')
                         print("WIR rows appended to DataWIR.txt")
+                        
+                        columns_wrr = [
+                                    "RECORD_TYPE", "PART_CNT", "RTST_CNT", "ABRT_CNT", "GOOD_CNT",
+                                    "FUNC_CNT", "WAFER_ID", "HI_LIMIT"
+                                    ]
+
+                        # Build the JSON-ready dict (`rec`) from df_values
+                        rec = dict(zip(columns_wrr,df_val_WRR))
+                        # Optional: add metadata
+                        rec["timestamp"] = datetime.utcnow().isoformat(timespec="seconds") + "Z"
+
+                             #JSON                   
+                             # Write NDJSON (append mode)
+                        out_path = 'OUTPUT/DataAll.ndjson'
+                        with open(out_path, 'a', encoding='utf-8') as f:
+                                 f.write(json.dumps(rec, ensure_ascii=False) + '\n')
                   
                 #PIR 
         elif record_type in ["PIR"]:
@@ -377,6 +433,24 @@ if file_path.lower().endswith(('.std', '.stdf')):
                                 line = '\t'.join(str(value) for value in row.values)
                                 f.write(line + '\n')
                         print("PIR rows appended to DataPIR.txt")
+
+                             # Build the JSON-ready dict (`rec`) from df_values
+                        rec = {
+                                    "RECORD_TYPE": "PIR",
+                                    "HEAD_NUM": head_num,
+                                    "SITE_NUM": site_num,
+                                    "timestamp": datetime.utcnow().isoformat(timespec="seconds") + "Z"
+                                 }
+                             #dict(zip(columns_sbr, df_SBR_json))
+                             # Optional: add metadata
+                        rec["timestamp"] = datetime.utcnow().isoformat(timespec="seconds") + "Z"
+            
+                             #JSON                   
+                             # Write NDJSON (append mode)
+                        out_path = 'OUTPUT/DataAll.ndjson'
+                        with open(out_path, 'a', encoding='utf-8') as f:
+                                 f.write(json.dumps(rec, ensure_ascii=False) + '\n')
+
                   
                 #PRR        
         elif record_type in ["PRR"]:
@@ -405,7 +479,32 @@ if file_path.lower().endswith(('.std', '.stdf')):
                                 line = '\t'.join(str(value) for value in row.values)
                                 f.write(line + '\n')
                         print("PIR rows appended to DataPRR.txt")
-                        
+ 
+                             # Build the JSON-ready dict (`rec`) from df_values
+                        rec = {
+                                    "RECORD_TYPE": "PRR",
+                                    "PART_FLG": part_flg,
+                                    "NUM_TEST": num_test,
+                                    "HARD_BIN": hard_bin,
+                                    "SOFT_BIN": soft_bin,
+                                    "X_COORD": x_coord,
+                                    "Y_COORD": y_coord,
+                                    "TEST_T": test_t,
+                                    "PART_ID": part_id,
+                                    "PART_TXT": part_txt,
+                                    "PART_FIX": part_fix,
+                                    "timestamp": datetime.utcnow().isoformat(timespec="seconds") + "Z"
+                                 }
+                             #dict(zip(columns_sbr, df_SBR_json))
+                             # Optional: add metadata
+                        rec["timestamp"] = datetime.utcnow().isoformat(timespec="seconds") + "Z"
+            
+                             #JSON                   
+                             # Write NDJSON (append mode)
+                        out_path = 'OUTPUT/DataAll.ndjson'
+                        with open(out_path, 'a', encoding='utf-8') as f:
+                                 f.write(json.dumps(rec, ensure_ascii=False) + '\n')
+                          
                 #TSR
         elif record_type == "TSR":
                      print("YES TSR IS EXECUTING")
@@ -426,6 +525,29 @@ if file_path.lower().endswith(('.std', '.stdf')):
                      df_TSR.to_csv('OUTPUT/DataTSR.txt', sep='\t', header=False, index=False, mode='a')
                      print("TSR rows appended to DataTSR.txt")
                      
+                     # Build the JSON-ready dict (`rec`) from df_values
+                     rec = {
+                            "RECORD_TYPE": "TSR",
+                            "TEST_TYP": test_typ,
+                            "TEST_NUM": test_num,
+                            "EXEC_CNT": exec_cnt,
+                            "FAIL_CNT": fail_cnt,
+                            "TEST_NAM": test_nam,
+                            "SEQ_NAME": seq_name,
+                            "TEST_LBL": test_lbl,
+                            "timestamp": datetime.utcnow().isoformat(timespec="seconds") + "Z"
+                         }
+                     #dict(zip(columns_sbr, df_SBR_json))
+                     # Optional: add metadata
+                     rec["timestamp"] = datetime.utcnow().isoformat(timespec="seconds") + "Z"
+    
+                     #JSON                   
+                     # Write NDJSON (append mode)
+                     out_path = 'OUTPUT/DataAll.ndjson'
+                     with open(out_path, 'a', encoding='utf-8') as f:
+                         f.write(json.dumps(rec, ensure_ascii=False) + '\n')
+                    
+                     
                 #HBR
         elif record_type == "HBR":
                      print("YES HBR IS EXECUTING")
@@ -443,6 +565,31 @@ if file_path.lower().endswith(('.std', '.stdf')):
                      os.makedirs('OUTPUT', exist_ok=True)
                      df_HBR.to_csv('OUTPUT/DataHBR.txt', sep='\t', header=False, index=False, mode='a')
                      print("HBR rows appended to DataHBR.txt")
+                     
+                     columns_hbr = [
+                                    "RECORD_TYPE", "HBIN_NUM", "HBIN_CNT", "HBIN_NAME"
+                                    ]
+                    
+                     # Build the JSON-ready dict (`rec`) from df_values
+                     rec = {
+                            "RECORD_TYPE": "HBR",
+                            "HBIN_NUM": hbin_num,
+                            "HBIN_CNT": hbin_cnt,
+                            "HBIN_NAME": hbin_name,
+                            "timestamp": datetime.utcnow().isoformat(timespec="seconds") + "Z"
+                         }
+                     #dict(zip(columns_sbr, df_SBR_json))
+                     # Optional: add metadata
+                     rec["timestamp"] = datetime.utcnow().isoformat(timespec="seconds") + "Z"
+    
+                     #JSON                   
+                     # Write NDJSON (append mode)
+                     out_path = 'OUTPUT/DataAll.ndjson'
+                     with open(out_path, 'a', encoding='utf-8') as f:
+                         f.write(json.dumps(rec, ensure_ascii=False) + '\n')
+                         print("SBR record appended to DataAll.ndjson")
+
+
 
                 #SBR
         elif record_type == "SBR":
@@ -461,25 +608,67 @@ if file_path.lower().endswith(('.std', '.stdf')):
                      os.makedirs('OUTPUT', exist_ok=True)
                      df_SBR.to_csv('OUTPUT/DataSBR.txt', sep='\t', header=False, index=False, mode='a')
                      print("SBR rows appended to DataSBR.txt")
+                     
+                     
+                     columns_sbr = [
+                                    "RECORD_TYPE", "SBIN_NUM", "SBIN_CNT", "SBIN_NAME"
+                                    ]
+                    
+                     # Build the JSON-ready dict (`rec`) from df_values
+                     rec = {
+                            "RECORD_TYPE": "SBR",
+                            "SBIN_NUM": sbin_num,
+                            "SBIN_CNT": sbin_cnt,
+                            "SBIN_NAME": sbin_name,
+                            "timestamp": datetime.utcnow().isoformat(timespec="seconds") + "Z"
+                         }
+                     #dict(zip(columns_sbr, df_SBR_json))
+                     # Optional: add metadata
+                     rec["timestamp"] = datetime.utcnow().isoformat(timespec="seconds") + "Z"
+    
+                     #JSON                   
+                     # Write NDJSON (append mode)
+                     out_path = 'OUTPUT/DataAll.ndjson'
+                     with open(out_path, 'a', encoding='utf-8') as f:
+                         f.write(json.dumps(rec, ensure_ascii=False) + '\n')
+                         print("SBR record appended to DataAll.ndjson")
+
 
 
                 #DTR
         elif record_type in ["DTR"]:
-                    df_values = [record_type,str(record.get('TEXT_DAT', "Unknown DTR record"))]
-                    df = pd.DataFrame([df_values])
+                    df_values_dtr = [record_type,str(record.get('TEXT_DAT', "Unknown DTR record"))]
+                    df = pd.DataFrame([df_values_dtr])
 
                     with open('OUTPUT/DataDTR.txt', 'a') as f:
                         for index, row in df.iterrows():
                                 line = '\t'.join(str(value) for value in row.values)
                                 f.write(line + '\n')
                         print("PTR rows appended to DataDTR.txt")
+                        
+                        columns_dtr = [
+                                    "RECORD_TYPE", "DATA_TEXT"
+                                    ]
+                        
+                        # Build the JSON-ready dict (`rec`) from df_values
+                        rec = dict(zip(columns_dtr,df_values_dtr))
+                        # Optional: add metadata
+                        rec["timestamp"] = datetime.utcnow().isoformat(timespec="seconds") + "Z"
+
+                        #JSON                   
+                        # Write NDJSON (append mode)
+                        out_path = 'OUTPUT/DataAll.ndjson'
+                        with open(out_path, 'a', encoding='utf-8') as f:
+                            f.write(json.dumps(rec, ensure_ascii=False) + '\n')
+                            print("DTR record appended to DataAll.ndjson")
 
                 #PTR     
         elif record_type in ["PTR"]:
+
                     try:
-                        df_values = [
-                            int(record.get('SITE_NUM', 99999)),
+                        df_values_ptr = [
                             record_type,
+                            int(record.get('SITE_NUM', 99999)),
                             float(record.get('TEST_NUM', 9999.9999)),
                             str(record.get('TEST_TXT', "Unknown test name")),
                             float(record.get('LO_LIMIT', 0.0)),
@@ -488,8 +677,19 @@ if file_path.lower().endswith(('.std', '.stdf')):
                             str(record.get('UNITS', "ghosts"))
                         ]
                         
-                        df = pd.DataFrame([df_values], columns=[
-                             "SITE_NUM", "RECORD_TYPE", "TEST_NUM", "TEST_NAME",
+                        columns_ptr = [
+                                     "RECORD_TYPE","SITE_NUM","TEST_NUM", "TEST_NAME",
+                                    "LO_LIMIT", "RESULT", "HI_LIMIT", "UNITS"
+                                    ]
+
+                        # Build the JSON-ready dict (`rec`) from df_values
+                        rec = dict(zip(columns_ptr,df_values_ptr))
+                        # Optional: add metadata
+                        rec["timestamp"] = datetime.utcnow().isoformat(timespec="seconds") + "Z"
+
+                        
+                        df = pd.DataFrame([df_values_ptr], columns=[
+                              "RECORD_TYPE","SITE_NUM", "TEST_NUM", "TEST_NAME",
                              "LO_LIMIT", "RESULT", "HI_LIMIT", "UNITS"
                          ])
 
@@ -498,6 +698,14 @@ if file_path.lower().endswith(('.std', '.stdf')):
                                 line = '\t'.join(str(value) for value in row.values)
                                 f.write(line + '\n')
                             #print("PTR rows appended to DataPTR.txt")
+                            
+                        #JSON                   
+                        # Write NDJSON (append mode)
+                        out_path = 'OUTPUT/DataAll.ndjson'
+                        with open(out_path, 'a', encoding='utf-8') as f:
+                            f.write(json.dumps(rec, ensure_ascii=False) + '\n')
+                            print("PTR record appended to DataAll.ndjson")
+
 
                     except (ValueError, TypeError) as e:
                         print(f"Can't find the test details: {e}")
